@@ -4,10 +4,9 @@ using System.Collections.Generic;
 [RequireComponent(typeof(Collider2D))]
 public class CoveringObject : MonoBehaviour
 {
-    [Tooltip("Tag for objects that can be covered.")]
+    [Tooltip("Tag for objects that can be covered")]
     public string coverableTag = "Coverable";
 
-    [Tooltip("Reference to the EventManager that handles coverage events.")]
     public EventManager eventManager;
 
     private Collider2D _collider;
