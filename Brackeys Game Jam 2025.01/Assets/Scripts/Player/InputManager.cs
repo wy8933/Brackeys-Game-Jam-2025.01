@@ -13,7 +13,8 @@ public class InputManager : MonoBehaviour
 
     public GameObject GetClickedObject() {
 
-        RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+        RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(mousePosition), Vector2.zero);
+
 
         if (hit) 
         {
@@ -39,7 +40,7 @@ public class InputManager : MonoBehaviour
         while (isDragging && GetClickedObject()!=null)
         {
             GetClickedObject().transform.position = camera.ScreenToWorldPoint(mousePosition) + new Vector3(0,0,10);
-            yield return 0;
+            yield return null;
         }
 
     }
