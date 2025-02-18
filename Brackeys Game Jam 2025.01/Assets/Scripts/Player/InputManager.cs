@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,12 +11,13 @@ public class InputManager : MonoBehaviour
     public bool isDragging;
     public Vector3 mousePosition;
     public Camera camera;
+    
+    private GameObject selectedObject;
 
     public GameObject GetClickedObject() {
 
         RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(mousePosition), Vector2.zero);
-
-
+        
         if (hit) 
         {
             return hit.collider.gameObject;
@@ -30,18 +32,22 @@ public class InputManager : MonoBehaviour
         MousePositionAction.action.Enable();
 
         MousePositionAction.action.performed += context => { mousePosition = context.ReadValue<Vector2>(); };
-        PrimaryAction.action.performed += _ => { StartCoroutine(OnMouseDrag()); };
-        PrimaryAction.action.canceled += _ => { isDragging = false; };
+        PrimaryAction.action.performed += _ => {         
+            selectedObject = GetClickedObject();
+            if (selectedObject != null)
+            {
+                isDragging = true;
+            } };
+        PrimaryAction.action.canceled += _ => { isDragging = false; selectedObject = null; };
     }
-
-    private IEnumerator OnMouseDrag()
+    
+    private void Update()
     {
-        isDragging = true;
-        while (isDragging && GetClickedObject()!=null)
+        if (isDragging && selectedObject)
         {
-            GetClickedObject().transform.position = camera.ScreenToWorldPoint(mousePosition) + new Vector3(0,0,10);
-            yield return null;
+            Vector3 targetPosition = camera.ScreenToWorldPoint(mousePosition);
+            targetPosition.z = 0;
+            selectedObject.transform.position = targetPosition;
         }
-
     }
 }

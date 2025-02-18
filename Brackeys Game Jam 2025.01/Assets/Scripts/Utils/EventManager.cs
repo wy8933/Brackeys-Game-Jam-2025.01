@@ -70,7 +70,7 @@ public class EventManager : MonoBehaviour
 
     private void Update()
     {
-        if (GameTimer.Instance == null) return;
+        if (!GameTimer.Instance) return;
 
         float elapsedTime = GameTimer.Instance.GetTimeElapsed();
 
@@ -88,7 +88,7 @@ public class EventManager : MonoBehaviour
     /// <summary>
     /// Calls the corresponding method based on the enum event
     /// </summary>
-    /// <param name="eventName">The event to trigger</param>
+    /// <param name="gameEvent">The event to trigger</param>
     private void TriggerEvent(GameEvent gameEvent)
     {
         switch (gameEvent)

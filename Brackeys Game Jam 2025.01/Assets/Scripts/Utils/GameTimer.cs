@@ -11,6 +11,8 @@ public class GameTimer : MonoBehaviour
     private bool _isNightOver;
     
     [SerializeField] private TextMeshProUGUI clockText;
+    public float GetTimeElapsed() { return _elapsedTime; }
+    
     void Start()
     {
         if (!Instance)
@@ -21,7 +23,7 @@ public class GameTimer : MonoBehaviour
         _elapsedTime = 0f;
     }
 
-    public float GetTimeElapsed() { return _elapsedTime; }
+
     void Update()
     {
         if (!_isNightOver)
@@ -35,16 +37,7 @@ public class GameTimer : MonoBehaviour
                 int minutes = Mathf.FloorToInt((hours - Mathf.Floor(hours)) * 60);
                 clockText.SetText($"{Mathf.Floor(hours)}:{minutes:00} AM");
             }
-        
-            if (_elapsedTime >= GameDuration)
-            {
-                EndNight();
-            }
         }
     }
 
-    private void EndNight()
-    {
-        _isNightOver = true;
-    }
 }
