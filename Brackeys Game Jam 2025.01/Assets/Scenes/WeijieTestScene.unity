@@ -1086,10 +1086,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693e7ae84d6ee62448a2d195e0fe665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timedEvents:
-  - triggerTime: 0
-    eventName: 0
-    hasTriggered: 0
 --- !u!114 &1895437106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,7 +1111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea889a61f5172914e8ca8c9b4480b86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerInterval: 1
+  triggerInterval: 5
   autoTriggerGhostEvents: 01000000060000000d000000
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

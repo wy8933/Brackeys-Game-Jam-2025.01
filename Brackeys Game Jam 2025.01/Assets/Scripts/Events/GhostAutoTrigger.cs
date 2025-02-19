@@ -20,6 +20,7 @@ public class GhostAutoTrigger : MonoBehaviour
         // Set the first auto-trigger time
         nextTriggerTime = triggerInterval;
     }
+
     private void Update()
     {
         if (GameTimer.Instance == null || EventManager.Instance == null)
