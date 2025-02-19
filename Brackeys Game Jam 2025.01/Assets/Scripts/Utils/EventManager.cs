@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -52,8 +53,38 @@ public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
 
-    [Tooltip("List of events to trigger at specific times")]
-    public List<TimedEvent> timedEvents = new List<TimedEvent>();
+    public static float LastGhostEventTime = 0f;
+
+    private Dictionary<GameEvent, GameEventData> ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
+    {
+        // WindowGhost progression
+        { GameEvent.WindowGhostStage1, new GameEventData  { eventName = GameEvent.WindowGhostStage2, nextStageTime = 60f } },
+        { GameEvent.WindowGhostStage2, new GameEventData  { eventName = GameEvent.WindowGhostStage3, nextStageTime = 60f } },
+        { GameEvent.WindowGhostStage3, new GameEventData  { eventName = GameEvent.WindowGhostStage4, nextStageTime = 60f } },
+
+        // TVGhost progression
+        { GameEvent.TVGhostStage1, new GameEventData  { eventName = GameEvent.TVGhostStage2, nextStageTime = 45f } },
+        { GameEvent.TVGhostStage2, new GameEventData  { eventName = GameEvent.TVGhostStage3, nextStageTime = 45f } },
+
+        // RuleGhost progression
+        { GameEvent.RuleGhostStage1, new GameEventData  { eventName = GameEvent.RuleGhostStage2, nextStageTime = 50f } },
+
+        // Uninvited progression
+        { GameEvent.UninvitedStage1, new GameEventData  { eventName = GameEvent.UninvitedStage2, nextStageTime = 55f } },
+        { GameEvent.UninvitedStage2, new GameEventData  { eventName = GameEvent.UninvitedStage3, nextStageTime = 55f } },
+
+        // HungryGhost progression
+        { GameEvent.HungryGhostStage1, new GameEventData  { eventName = GameEvent.HungryGhostStage2, nextStageTime = 50f } },
+        { GameEvent.HungryGhostStage2, new GameEventData  { eventName = GameEvent.HungryGhostStage3, nextStageTime = 50f } },
+
+        // Darkness progression
+        { GameEvent.DarknessStage1, new GameEventData  { eventName = GameEvent.DarknessStage2, nextStageTime = 40f } },
+
+        // Fireplace progression
+        { GameEvent.FireplaceStage1, new GameEventData  { eventName = GameEvent.FireplaceStage2, nextStageTime = 60f } },
+        { GameEvent.FireplaceStage2, new GameEventData  { eventName = GameEvent.FireplaceStage3, nextStageTime = 60f } },
+    };
+
 
     public void Awake()
     {
@@ -68,22 +99,6 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if (GameTimer.Instance == null) return;
-
-        float elapsedTime = GameTimer.Instance.GetTimeElapsed();
-
-        // Loop through each timed event
-        foreach (TimedEvent timedEvent in timedEvents)
-        {
-            if (!timedEvent.hasTriggered && elapsedTime >= timedEvent.triggerTime)
-            {
-                timedEvent.hasTriggered = true;
-                TriggerEvent(timedEvent.eventName);
-            }
-        }
-    }
 
     /// <summary>
     /// Calls the corresponding method based on the enum event
@@ -96,16 +111,281 @@ public class EventManager : MonoBehaviour
             case GameEvent.EndNight:
                 EndNight();
                 break;
+
+            // WindowGhost events
+            case GameEvent.WindowGhostStage1:
+                HandleWindowGhostStage1();
+                break;
+            case GameEvent.WindowGhostStage2:
+                HandleWindowGhostStage2();
+                break;
+            case GameEvent.WindowGhostStage3:
+                HandleWindowGhostStage3();
+                break;
+            case GameEvent.WindowGhostStage4:
+                HandleWindowGhostStage4();
+                break;
+            case GameEvent.WindowGhostRepel:
+                HandleWindowGhostRepel();
+                break;
+
+            // TVGhost events
+            case GameEvent.TVGhostStage1:
+                HandleTVGhostStage1();
+                break;
+            case GameEvent.TVGhostStage2:
+                HandleTVGhostStage2();
+                break;
+            case GameEvent.TVGhostStage3:
+                HandleTVGhostStage3();
+                break;
+            case GameEvent.TVGhostRepel:
+                HandleTVGhostRepel();
+                break;
+
+            // RuleGhost events
+            case GameEvent.RuleGhostStage1:
+                HandleRuleGhostStage1();
+                break;
+            case GameEvent.RuleGhostStage2:
+                HandleRuleGhostStage2();
+                break;
+            case GameEvent.RuleGhostRepel:
+                HandleRuleGhostRepel();
+                break;
+
+            // Uninvited events
+            case GameEvent.UninvitedStage1:
+                HandleUninvitedStage1();
+                break;
+            case GameEvent.UninvitedStage2:
+                HandleUninvitedStage2();
+                break;
+            case GameEvent.UninvitedStage3:
+                HandleUninvitedStage3();
+                break;
+            case GameEvent.UninvitedRepel:
+                HandleUninvitedRepel();
+                break;
+
+            // HungryGhost events
+            case GameEvent.HungryGhostStage1:
+                HandleHungryGhostStage1();
+                break;
+            case GameEvent.HungryGhostStage2:
+                HandleHungryGhostStage2();
+                break;
+            case GameEvent.HungryGhostStage3:
+                HandleHungryGhostStage3();
+                break;
+            case GameEvent.HungryGhostRepel:
+                HandleHungryGhostRepel();
+                break;
+
+            // Darkness events
+            case GameEvent.DarknessStage1:
+                HandleDarknessStage1();
+                break;
+            case GameEvent.DarknessStage2:
+                HandleDarknessStage2();
+                break;
+            case GameEvent.DarknessRepel:
+                HandleDarknessRepel();
+                break;
+
+            // Fireplace events
+            case GameEvent.FireplaceStage1:
+                HandleFireplaceStage1();
+                break;
+            case GameEvent.FireplaceStage2:
+                HandleFireplaceStage2();
+                break;
+            case GameEvent.FireplaceStage3:
+                HandleFireplaceStage3();
+                break;
+            case GameEvent.FireplaceRepel:
+                HandleFireplaceRepel();
+                break;
+
             default:
                 Debug.LogWarning("No event found for: " + gameEvent);
                 break;
         }
+
+        GameEventData nextStageEvent = GetNextGhostTimedEvent(gameEvent);
+        if (nextStageEvent != null)
+        {
+            StartCoroutine(AutoProgressGhost(nextStageEvent));
+        }
+
+    }
+    public void TriggerGhostEventExternally(GameEvent ghostEvent)
+    {
+        TriggerEvent(ghostEvent);
+    }
+
+    /// <summary>
+    /// Coroutine that waits for a specified time before auto-triggering the next ghost stage
+    /// </summary>
+    private IEnumerator AutoProgressGhost(GameEventData nextTimedEvent)
+    {
+        yield return new WaitForSeconds(nextTimedEvent.nextStageTime/10); // Divide the time by 10 for testing purpose, make sure to remove it
+        Debug.Log("Auto-progressing to next ghost stage: " + nextTimedEvent.eventName);
+        TriggerGhostEventExternally(nextTimedEvent.eventName);
+    }
+
+    private GameEventData GetNextGhostTimedEvent(GameEvent currentEvent)
+    {
+        if (ghostProgressionMapping.TryGetValue(currentEvent, out GameEventData nextTimedEvent))
+        {
+            return nextTimedEvent;
+        }
+        return null;
     }
 
     private void EndNight()
     {
         Debug.Log("Night has ended!");
     }
+
+
+
+    #region Ghost Events
+
+    #region Window Ghost
+    private void HandleWindowGhostStage1() 
+    {
+        Debug.Log("WindowGhost Stage 1 triggered!"); 
+    }
+    private void HandleWindowGhostStage2() 
+    {
+        Debug.Log("WindowGhost Stage 2 triggered!"); 
+    }
+    private void HandleWindowGhostStage3() 
+    {
+        Debug.Log("WindowGhost Stage 3 triggered!"); 
+    }
+    private void HandleWindowGhostStage4() 
+    {
+        Debug.Log("WindowGhost Stage 4 triggered!"); 
+    }
+    private void HandleWindowGhostRepel() 
+    {
+        Debug.Log("WindowGhost Repel triggered!"); 
+    }
+    #endregion
+
+    #region TV Ghost
+    private void HandleTVGhostStage1() 
+    {
+        Debug.Log("TVGhost Stage 1 triggered!"); 
+    }
+    private void HandleTVGhostStage2() 
+    {
+        Debug.Log("TVGhost Stage 2 triggered!"); 
+    }
+    private void HandleTVGhostStage3() 
+    {
+        Debug.Log("TVGhost Stage 3 triggered!"); 
+    }
+    private void HandleTVGhostRepel() 
+    {
+        Debug.Log("TVGhost Repel triggered!"); 
+    }
+
+    #endregion
+
+    #region Rule Ghost
+    private void HandleRuleGhostStage1() 
+    {
+        Debug.Log("RuleGhost Stage 1 triggered!"); 
+    }
+    private void HandleRuleGhostStage2() 
+    {
+        Debug.Log("RuleGhost Stage 2 triggered!"); 
+    }
+    private void HandleRuleGhostRepel() 
+    {
+        Debug.Log("RuleGhost Repel triggered!"); 
+    }
+    #endregion
+
+    #region Uninvited
+    private void HandleUninvitedStage1() 
+    {
+        Debug.Log("Uninvited Stage 1 triggered!"); 
+    }
+    private void HandleUninvitedStage2() 
+    {
+        Debug.Log("Uninvited Stage 2 triggered!"); 
+    }
+    private void HandleUninvitedStage3() 
+    {
+        Debug.Log("Uninvited Stage 3 triggered!"); 
+    }
+    private void HandleUninvitedRepel() 
+    {
+        Debug.Log("Uninvited Repel triggered!"); 
+    }
+    #endregion
+
+    #region HungryGhost
+    // HungryGhost event methods
+    private void HandleHungryGhostStage1() 
+    {
+        Debug.Log("HungryGhost Stage 1 triggered!"); 
+    }
+    private void HandleHungryGhostStage2() 
+    {
+        Debug.Log("HungryGhost Stage 2 triggered!");
+    }
+    private void HandleHungryGhostStage3() 
+    {
+        Debug.Log("HungryGhost Stage 3 triggered!"); 
+    }
+    private void HandleHungryGhostRepel() 
+    {
+        Debug.Log("HungryGhost Repel triggered!"); 
+    }
+    #endregion
+
+    #region Darkness
+    // Darkness event methods
+    private void HandleDarknessStage1() 
+    {
+        Debug.Log("Darkness Stage 1 triggered!");
+    }
+    private void HandleDarknessStage2() 
+    {
+        Debug.Log("Darkness Stage 2 triggered!"); 
+    }
+    private void HandleDarknessRepel() 
+    {
+        Debug.Log("Darkness Repel triggered!"); 
+    }
+    #endregion
+
+    #region Fireplace
+    // Fireplace event methods
+    private void HandleFireplaceStage1() 
+    { 
+        Debug.Log("Fireplace Stage 1 triggered!"); 
+    }
+    private void HandleFireplaceStage2()
+    {
+        Debug.Log("Fireplace Stage 2 triggered!"); 
+    }
+    private void HandleFireplaceStage3() 
+    {
+        Debug.Log("Fireplace Stage 3 triggered!");
+    }
+    private void HandleFireplaceRepel() 
+    {
+        Debug.Log("Fireplace Repel triggered!");
+    }
+    #endregion
+    
+    #endregion
 
 
     /// <summary>

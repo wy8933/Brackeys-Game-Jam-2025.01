@@ -1,10 +1,10 @@
 using UnityEngine;
 
 [System.Serializable]
-public class TimedEvent
+public class GameEventData
 {
-    [Tooltip("Time (in seconds) after the start of the game when this event should trigger")]
-    public float triggerTime;
+    [Tooltip("Time after the previous stage event when this event should trigger")]
+    public float nextStageTime;
 
     [Tooltip("Select the event to trigger")]
     public GameEvent eventName;
