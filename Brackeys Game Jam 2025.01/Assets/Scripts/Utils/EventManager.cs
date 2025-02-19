@@ -52,8 +52,8 @@ public enum GameEvent
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
-
-    public static float LastGhostEventTime = 0f;
+    
+    private Dictionary<string, bool> ghostSeriesTriggered = new Dictionary<string, bool>();
 
     private Dictionary<GameEvent, GameEventData> ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
     {
@@ -92,6 +92,12 @@ public class EventManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            string[] series = { "WindowGhost", "TVGhost", "RuleGhost", "Uninvited", "HungryGhost", "Darkness", "Fireplace" };
+            foreach (string s in series)
+            {
+                ghostSeriesTriggered[s] = false;
+            }
         }
         else
         {
@@ -106,6 +112,15 @@ public class EventManager : MonoBehaviour
     /// <param name="eventName">The event to trigger</param>
     private void TriggerEvent(GameEvent gameEvent)
     {
+        string series = GetGhostSeries(gameEvent);
+
+        // If event is stage1 and the series is already triggered
+        if (gameEvent.ToString().Contains("Stage1") && ghostSeriesTriggered.ContainsKey(series) && ghostSeriesTriggered[series])
+        {
+            Debug.Log($"{gameEvent} of ghost series '{series}' already triggered");
+            return;
+        }
+
         switch (gameEvent)
         {
             case GameEvent.EndNight:
@@ -114,6 +129,7 @@ public class EventManager : MonoBehaviour
 
             // WindowGhost events
             case GameEvent.WindowGhostStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleWindowGhostStage1();
                 break;
             case GameEvent.WindowGhostStage2:
@@ -126,11 +142,13 @@ public class EventManager : MonoBehaviour
                 HandleWindowGhostStage4();
                 break;
             case GameEvent.WindowGhostRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.WindowGhostRepel));
                 HandleWindowGhostRepel();
                 break;
 
             // TVGhost events
             case GameEvent.TVGhostStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleTVGhostStage1();
                 break;
             case GameEvent.TVGhostStage2:
@@ -140,22 +158,26 @@ public class EventManager : MonoBehaviour
                 HandleTVGhostStage3();
                 break;
             case GameEvent.TVGhostRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.TVGhostRepel));
                 HandleTVGhostRepel();
                 break;
 
             // RuleGhost events
             case GameEvent.RuleGhostStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleRuleGhostStage1();
                 break;
             case GameEvent.RuleGhostStage2:
                 HandleRuleGhostStage2();
                 break;
             case GameEvent.RuleGhostRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.RuleGhostRepel));
                 HandleRuleGhostRepel();
                 break;
 
             // Uninvited events
             case GameEvent.UninvitedStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleUninvitedStage1();
                 break;
             case GameEvent.UninvitedStage2:
@@ -165,11 +187,13 @@ public class EventManager : MonoBehaviour
                 HandleUninvitedStage3();
                 break;
             case GameEvent.UninvitedRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.UninvitedRepel));
                 HandleUninvitedRepel();
                 break;
 
             // HungryGhost events
             case GameEvent.HungryGhostStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleHungryGhostStage1();
                 break;
             case GameEvent.HungryGhostStage2:
@@ -179,22 +203,26 @@ public class EventManager : MonoBehaviour
                 HandleHungryGhostStage3();
                 break;
             case GameEvent.HungryGhostRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.HungryGhostRepel));
                 HandleHungryGhostRepel();
                 break;
 
             // Darkness events
             case GameEvent.DarknessStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleDarknessStage1();
                 break;
             case GameEvent.DarknessStage2:
                 HandleDarknessStage2();
                 break;
             case GameEvent.DarknessRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.DarknessRepel));
                 HandleDarknessRepel();
                 break;
 
             // Fireplace events
             case GameEvent.FireplaceStage1:
+                ghostSeriesTriggered[series] = true;
                 HandleFireplaceStage1();
                 break;
             case GameEvent.FireplaceStage2:
@@ -204,6 +232,7 @@ public class EventManager : MonoBehaviour
                 HandleFireplaceStage3();
                 break;
             case GameEvent.FireplaceRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.FireplaceRepel));
                 HandleFireplaceRepel();
                 break;
 
@@ -212,8 +241,7 @@ public class EventManager : MonoBehaviour
                 break;
         }
 
-        GameEventData nextStageEvent = GetNextGhostTimedEvent(gameEvent);
-        if (nextStageEvent != null)
+        if (!gameEvent.ToString().Contains("Repel") && ghostProgressionMapping.TryGetValue(gameEvent, out GameEventData nextStageEvent))
         {
             StartCoroutine(AutoProgressGhost(nextStageEvent));
         }
@@ -234,13 +262,23 @@ public class EventManager : MonoBehaviour
         TriggerGhostEventExternally(nextTimedEvent.eventName);
     }
 
-    private GameEventData GetNextGhostTimedEvent(GameEvent currentEvent)
+    private string GetGhostSeries(GameEvent gameEvent)
     {
-        if (ghostProgressionMapping.TryGetValue(currentEvent, out GameEventData nextTimedEvent))
+        string name = gameEvent.ToString();
+        int index = name.IndexOf("Stage");
+        if (index < 0)
         {
-            return nextTimedEvent;
+            index = name.IndexOf("Repel");
         }
-        return null;
+        return index >= 0 ? name.Substring(0, index) : name;
+    }
+
+    private void ResetGhostSeries(string series)
+    {
+        if (ghostSeriesTriggered.ContainsKey(series))
+        {
+            ghostSeriesTriggered[series] = false;
+        }
     }
 
     private void EndNight()
