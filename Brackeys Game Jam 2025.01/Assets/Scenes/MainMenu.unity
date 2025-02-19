@@ -276,6 +276,7 @@ MonoBehaviour:
   UIClips:
   - {fileID: 8300000, guid: 70c066be434c949e6957fab5a4b207dd, type: 3}
   - {fileID: 8300000, guid: c547119b2994646ee83b3a0db104fe36, type: 3}
+  - {fileID: 8300000, guid: a418e30da5f494d129c3f1d36847b9ec, type: 3}
 --- !u!4 &222629444
 Transform:
   m_ObjectHideFlags: 0
