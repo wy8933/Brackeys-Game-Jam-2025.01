@@ -30,7 +30,7 @@ public class GameTimer : MonoBehaviour
         if (clockText)
         {
             float progress = _elapsedTime / GameDuration;
-            float hours = 12f + progress * 6f; 
+            float hours = progress * 6f; 
             int minutes = Mathf.FloorToInt((hours - Mathf.Floor(hours)) * 60);
             clockText.SetText($"{Mathf.Floor(hours)}:{minutes:00} AM");
         }
