@@ -17,8 +17,10 @@ public class Settings : MonoBehaviour
     /// </summary>
     public void SFXOnValueChange()
     {
-        SoundManager.Instance.SFXMult = SFXSlider.value;
+        // SoundManager.Instance.SFXMult = SFXSlider.value; //commenting this out because I think we'll use several audio sources and it may be easier to set them one by one
+        SoundManager.Instance.UI.volume = SFXSlider.value;
         Debug.Log(SFXSlider.value);
+        SoundManager.Instance.Play_UI("SFX_UI_Hover");
     }
 
     /// <summary>
