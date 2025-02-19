@@ -27,34 +27,54 @@ public class InputManager : MonoBehaviour
         
     }
 
-    private void Awake()
+    private void OnEnable()
     {
         PrimaryAction.action.Enable();
         MousePositionAction.action.Enable();
         PauseAction.action.Enable();
 
-        MousePositionAction.action.performed += context => { mousePosition = context.ReadValue<Vector2>(); };
-        PrimaryAction.action.performed += _ => {         
-            selectedObject = GetClickedObject();
-            if (selectedObject)
-            {
-                isDragging = true;
-            } };
-        PrimaryAction.action.canceled += _ => { isDragging = false; selectedObject = null; };
-        PauseAction.action.performed += _ =>
-        {
-            if (PauseMenu.Instance.isPaused)
-                PauseMenu.Instance.Resume();
-            else
-            {
-                isDragging = false;
-                selectedObject = null;
-                PauseMenu.Instance.Pause();
-            }
-
-        };
+        MousePositionAction.action.performed += OnMouseMove;
+        PrimaryAction.action.performed += OnPrimaryAction;
+        PrimaryAction.action.canceled += OnPrimaryActionCanceled;
+        PauseAction.action.performed += OnPauseAction;
     }
-    
+
+    private void OnDisable()
+    {
+        MousePositionAction.action.performed -= OnMouseMove;
+        PrimaryAction.action.performed -= OnPrimaryAction;
+        PrimaryAction.action.canceled -= OnPrimaryActionCanceled;
+        PauseAction.action.performed -= OnPauseAction;
+    }
+
+    private void OnMouseMove(InputAction.CallbackContext context)
+    {
+        mousePosition = context.ReadValue<Vector2>();
+    }
+    private void OnPrimaryAction(InputAction.CallbackContext context)
+    {
+        selectedObject = GetClickedObject();
+        if (selectedObject)
+        {
+            isDragging = true;
+        }
+    }
+    private void OnPrimaryActionCanceled(InputAction.CallbackContext context)
+    {
+        isDragging = false;
+        selectedObject = null;
+    }
+    private void OnPauseAction(InputAction.CallbackContext context)
+    {
+        if (PauseMenu.Instance.isPaused)
+            PauseMenu.Instance.Resume();
+        else
+        {
+            isDragging = false;
+            selectedObject = null;
+            PauseMenu.Instance.Pause();
+        }
+    }
     private void Update()
     {
         if (isDragging && selectedObject && !PauseMenu.Instance.isPaused)

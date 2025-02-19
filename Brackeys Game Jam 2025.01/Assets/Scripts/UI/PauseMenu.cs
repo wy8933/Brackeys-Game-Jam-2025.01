@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class PauseMenu : MonoBehaviour
@@ -31,5 +32,11 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
         pausePanel.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    public void OnMainMenuClicked()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0);
     }
 }

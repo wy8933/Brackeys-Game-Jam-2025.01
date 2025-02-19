@@ -57,6 +57,7 @@ public class MenuManager : MonoBehaviour
     /// Go back to main menu
     /// </summary>
     public void OnMainMenuClicked() {
+        
         SceneManager.LoadScene(0);
     }
 }
