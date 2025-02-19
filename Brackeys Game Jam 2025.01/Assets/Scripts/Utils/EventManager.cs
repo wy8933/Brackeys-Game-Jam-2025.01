@@ -114,10 +114,10 @@ public class EventManager : MonoBehaviour
     {
         string series = GetGhostSeries(gameEvent);
 
-        // If event is not Stage1 and the series is already triggered
-        if (!gameEvent.ToString().Contains("Stage1") && ghostSeriesTriggered.ContainsKey(series) && ghostSeriesTriggered[series])
+        // If event is stage1 and the series is already triggered
+        if (gameEvent.ToString().Contains("Stage1") && ghostSeriesTriggered.ContainsKey(series) && ghostSeriesTriggered[series])
         {
-            Debug.Log($"Ghost series '{series}' already triggered");
+            Debug.Log($"{gameEvent} of ghost series '{series}' already triggered");
             return;
         }
 
