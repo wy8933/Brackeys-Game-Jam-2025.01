@@ -7,6 +7,7 @@ public class InputManager : MonoBehaviour
 {
     public InputActionReference PrimaryAction;
     public InputActionReference MousePositionAction;
+    public InputActionReference PauseAction;
 
     public bool isDragging;
     public Vector3 mousePosition;
@@ -30,20 +31,33 @@ public class InputManager : MonoBehaviour
     {
         PrimaryAction.action.Enable();
         MousePositionAction.action.Enable();
+        PauseAction.action.Enable();
 
         MousePositionAction.action.performed += context => { mousePosition = context.ReadValue<Vector2>(); };
         PrimaryAction.action.performed += _ => {         
             selectedObject = GetClickedObject();
-            if (selectedObject != null)
+            if (selectedObject)
             {
                 isDragging = true;
             } };
         PrimaryAction.action.canceled += _ => { isDragging = false; selectedObject = null; };
+        PauseAction.action.performed += _ =>
+        {
+            if (PauseMenu.Instance.isPaused)
+                PauseMenu.Instance.Resume();
+            else
+            {
+                isDragging = false;
+                selectedObject = null;
+                PauseMenu.Instance.Pause();
+            }
+
+        };
     }
     
     private void Update()
     {
-        if (isDragging && selectedObject)
+        if (isDragging && selectedObject && !PauseMenu.Instance.isPaused)
         {
             Vector3 targetPosition = camera.ScreenToWorldPoint(mousePosition);
             targetPosition.z = 0;

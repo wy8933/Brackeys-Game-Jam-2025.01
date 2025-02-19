@@ -4,11 +4,10 @@ using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
 {
-    private const float GameDuration = 360f;
+    private const float GameDuration = 360f; //6min
     public static GameTimer Instance;
 
     private float _elapsedTime;
-    private bool _isNightOver;
     
     [SerializeField] private TextMeshProUGUI clockText;
     public float GetTimeElapsed() { return _elapsedTime; }
@@ -26,17 +25,14 @@ public class GameTimer : MonoBehaviour
 
     void Update()
     {
-        if (!_isNightOver)
-        {
-            _elapsedTime += Time.deltaTime;
+        _elapsedTime += Time.deltaTime;
 
-            if (clockText)
-            {
-                float progress = _elapsedTime / GameDuration;
-                float hours = 12f + progress * 6f; 
-                int minutes = Mathf.FloorToInt((hours - Mathf.Floor(hours)) * 60);
-                clockText.SetText($"{Mathf.Floor(hours)}:{minutes:00} AM");
-            }
+        if (clockText)
+        {
+            float progress = _elapsedTime / GameDuration;
+            float hours = 12f + progress * 6f; 
+            int minutes = Mathf.FloorToInt((hours - Mathf.Floor(hours)) * 60);
+            clockText.SetText($"{Mathf.Floor(hours)}:{minutes:00} AM");
         }
     }
 
