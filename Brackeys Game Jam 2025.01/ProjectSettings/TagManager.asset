@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Coverable
   - Log
+  - Food
   layers:
   - Default
   - TransparentFX
