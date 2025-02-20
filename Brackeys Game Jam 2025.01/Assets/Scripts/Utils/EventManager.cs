@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
 
 public enum GameEvent
 {
@@ -46,7 +47,14 @@ public enum GameEvent
     FireplaceStage1,
     FireplaceStage2,
     FireplaceStage3,
-    FireplaceRepel
+    FireplaceRepel,
+
+
+    //Rug Monster events
+    RugMonsterStage1,
+    RugMonsterStage2,
+    RugMonsterStage3,
+    RugMonsterRepel
 }
 
 public class EventManager : MonoBehaviour
@@ -83,6 +91,10 @@ public class EventManager : MonoBehaviour
         // Fireplace progression
         { GameEvent.FireplaceStage1, new GameEventData  { eventName = GameEvent.FireplaceStage2, nextStageTime = 60f } },
         { GameEvent.FireplaceStage2, new GameEventData  { eventName = GameEvent.FireplaceStage3, nextStageTime = 60f } },
+
+        // RugMonster progression
+        { GameEvent.RugMonsterStage1, new GameEventData{ eventName = GameEvent.RugMonsterStage2, nextStageTime = 30f } },
+        { GameEvent.RugMonsterStage2, new GameEventData{ eventName = GameEvent.RugMonsterStage3, nextStageTime = 30f } },
     };
 
 
@@ -93,7 +105,7 @@ public class EventManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-            string[] series = { "WindowGhost", "TVGhost", "RuleGhost", "Uninvited", "HungryGhost", "Darkness", "Fireplace" };
+            string[] series = { "WindowGhost", "TVGhost", "RuleGhost", "Uninvited", "HungryGhost", "Darkness", "Fireplace", "RugMoster" };
             foreach (string s in series)
             {
                 ghostSeriesTriggered[s] = false;
@@ -235,6 +247,24 @@ public class EventManager : MonoBehaviour
                 ResetGhostSeries(GetGhostSeries(GameEvent.FireplaceRepel));
                 HandleFireplaceRepel();
                 break;
+
+            // Rug Monster Event
+            case GameEvent.RugMonsterStage1:
+                ghostSeriesTriggered[series] = true;
+                HandleRugMonsterStage1();
+                break;
+            case GameEvent.RugMonsterStage2:
+                HandleRugMonsterStage2();
+                break;
+            case GameEvent.RugMonsterStage3:
+                HandleRugMonsterStage3();
+                break;
+            case GameEvent.RugMonsterRepel:
+                ResetGhostSeries(GetGhostSeries(GameEvent.RugMonsterRepel));
+                HandleRugMonsterRepel();
+                break;
+
+
 
             default:
                 Debug.LogWarning("No event found for: " + gameEvent);
@@ -422,7 +452,29 @@ public class EventManager : MonoBehaviour
         Debug.Log("Fireplace Repel triggered!");
     }
     #endregion
-    
+
+    #region Rug Monster
+    private void HandleRugMonsterStage1()
+    {
+        Debug.Log("Rug Monster Stage 1 triggered");
+    }
+
+    private void HandleRugMonsterStage2()
+    {
+        Debug.Log("Rug Monster Stage 2 triggered");
+    }
+
+    private void HandleRugMonsterStage3()
+    {
+        Debug.Log("Rug Monster Stage 3 triggered");
+    }
+
+    private void HandleRugMonsterRepel() 
+    {
+        Debug.Log("RugMonster Repel triggered!");
+    }
+    #endregion
+
     #endregion
 
 
