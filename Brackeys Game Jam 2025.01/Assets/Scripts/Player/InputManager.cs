@@ -55,17 +55,18 @@ public class InputManager : MonoBehaviour
     {
         selectedObject = GetClickedObject();
         
-        if (selectedObject.CompareTag("Curtain"))
-        {
-            Curtain curtain = selectedObject.GetComponent<Curtain>();
-            if (curtain)
-            {
-                curtain.SetCover();
-                return;
-            }
-        }
         if (selectedObject)
         {
+            if (selectedObject.CompareTag("Curtain"))
+            {
+                Curtain curtain = selectedObject.GetComponent<Curtain>();
+                if (curtain)
+                {
+                    curtain.SetCover();
+                    return;
+                }
+            }
+            
             isDragging = true;
         }
     }
