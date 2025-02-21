@@ -14,14 +14,33 @@ public class ChocolateBar : MonoBehaviour
     // Tracks the current state
     private int currentPieceIndex = 0;
 
+    [Tooltip("Time interval between triggering the Rug Monster when the bar is open.")]
+    public float rugMonsterTriggerInterval = 30f;
+    private float lastRugMonsterTriggerTime = 0f;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Initialize with the whole chocolate bar sprite (if available)
+        // Initialize with the whole chocolate bar sprite
         if (chocolateStates != null && chocolateStates.Length > 0)
         {
             spriteRenderer.sprite = chocolateStates[0];
+        }
+    }
+
+    private void Update()
+    {
+        // When the chocolate bar is open, check if it's time to trigger the Rug Monster event
+        if (isOpen && GameTimer.Instance != null && EventManager.Instance != null)
+        {
+            float currentTime = GameTimer.Instance.GetTimeElapsed();
+            if (currentTime - lastRugMonsterTriggerTime >= rugMonsterTriggerInterval)
+            {
+                // Trigger Rug Monster Stage 1 event
+                EventManager.Instance.TriggerGhostEventExternally(GameEvent.RugMonsterStage1);
+                lastRugMonsterTriggerTime = currentTime;
+            }
         }
     }
 
