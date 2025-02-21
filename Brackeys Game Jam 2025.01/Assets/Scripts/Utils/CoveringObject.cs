@@ -15,7 +15,7 @@ public class CoveringObject : MonoBehaviour
     {
         _collider = GetComponent<Collider2D>();
 
-        // Find the event manager if not assigned.
+        // Find the event manager if not assigned
         if (eventManager == null)
         {
             eventManager = FindFirstObjectByType<EventManager>();
@@ -38,7 +38,7 @@ public class CoveringObject : MonoBehaviour
     /// Determines if all four corners of the coverable object lie inside of covering object
     /// </summary>
     /// <param name="coverableCollider">The collider of the coverable object</param>
-    /// <returns>True if fully contained otherwise false.</returns>
+    /// <returns>True if fully contained otherwise false</returns>
     private bool IsFullyContained(Collider2D coverableCollider)
     {
         Bounds bounds = coverableCollider.bounds;
