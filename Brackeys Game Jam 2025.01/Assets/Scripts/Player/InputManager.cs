@@ -54,6 +54,16 @@ public class InputManager : MonoBehaviour
     private void OnPrimaryAction(InputAction.CallbackContext context)
     {
         selectedObject = GetClickedObject();
+        
+        if (selectedObject.CompareTag("Curtain"))
+        {
+            Curtain curtain =selectedObject.GetComponent<Curtain>();
+            if (curtain)
+            {
+                curtain.SetCover();
+                return;
+            }
+        }
         if (selectedObject)
         {
             isDragging = true;
