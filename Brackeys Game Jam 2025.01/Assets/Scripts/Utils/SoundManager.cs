@@ -9,6 +9,8 @@ public class SoundManager : MonoBehaviour
     public float SFXMult;
     public float MusicMult;
     public AudioSource UI;
+    public AudioSource SFX_Looping;
+    public AudioSource SFX_OneShots;
     public AudioSource BGM;
     public AudioClip[] UIClips;
     public Dictionary<string, AudioClip> clipDictionary = new Dictionary<string, AudioClip>();
