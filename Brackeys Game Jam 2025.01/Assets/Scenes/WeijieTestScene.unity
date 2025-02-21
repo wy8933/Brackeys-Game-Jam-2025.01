@@ -1103,7 +1103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be39c03fd14471e419f13513c83b563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnDuration: 10
+  burnDuration: 30
   startBurn: 0
 --- !u!212 &521093155
 SpriteRenderer:
@@ -1409,7 +1409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be39c03fd14471e419f13513c83b563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnDuration: 10
+  burnDuration: 30
   startBurn: 0
 --- !u!212 &945458620
 SpriteRenderer:
@@ -1748,7 +1748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be39c03fd14471e419f13513c83b563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnDuration: 10
+  burnDuration: 30
   startBurn: 0
 --- !u!212 &1057297196
 SpriteRenderer:
@@ -2743,7 +2743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be39c03fd14471e419f13513c83b563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnDuration: 10
+  burnDuration: 30
   startBurn: 0
 --- !u!212 &1772611851
 SpriteRenderer:
@@ -2975,7 +2975,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e08e434d407653445b91ac18016625f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLog: 5
+  maxLog: 3
   minLog: 1
 --- !u!1 &1895437102
 GameObject:
@@ -3208,7 +3208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be39c03fd14471e419f13513c83b563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  burnDuration: 10
+  burnDuration: 30
   startBurn: 0
 --- !u!70 &2014875969
 CapsuleCollider2D:

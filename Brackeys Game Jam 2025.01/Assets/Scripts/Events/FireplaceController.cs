@@ -10,20 +10,21 @@ public class FireplaceController : MonoBehaviour
     [Tooltip("Minimum number of logs needed to avoid darkness")]
     public int minLog = 1;
 
-    private int currentLogCount = 3;
-    private bool ghostTriggered = false;
+    private int _currentLogCount = 0;
+    private bool _fireGhostTriggered = false;
+    private bool _darkGhostTriggered = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Log"))
         {
             collision.GetComponent<Log>().StartBurn();
-            currentLogCount++;
+            _currentLogCount++;
 
-            // If log count reaches or exceeds threshold and ghost event hasn't yet been triggered, trigger it.
-            if (currentLogCount >= maxLog && !ghostTriggered)
+            // If log count reaches or exceeds threshold and ghost event hasn't yet been triggered, trigger it
+            if (_currentLogCount >= maxLog && !_fireGhostTriggered)
             {
-                ghostTriggered = true;
+                _fireGhostTriggered = true;
                 if (EventManager.Instance != null)
                 {
                     // Trigger the ghost event for the fireplace
@@ -31,9 +32,9 @@ public class FireplaceController : MonoBehaviour
                 }
             }
 
-            if (ghostTriggered && currentLogCount > minLog)
+            if (_darkGhostTriggered && _currentLogCount > minLog)
             {
-                ghostTriggered = false;
+                _darkGhostTriggered = false;
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.DarknessRepel);
@@ -47,20 +48,20 @@ public class FireplaceController : MonoBehaviour
         if (collision.CompareTag("Log"))
         {
             collision.GetComponent<Log>().StopBurn();
-            currentLogCount--;
+            _currentLogCount--;
 
-            if (ghostTriggered && currentLogCount < maxLog)
+            if (_fireGhostTriggered && _currentLogCount < maxLog)
             {
-                ghostTriggered = false;
+                _fireGhostTriggered = false;
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.FireplaceRepel);
                 }
             }
 
-            if (!ghostTriggered && currentLogCount < minLog)
+            if (!_darkGhostTriggered && _currentLogCount < minLog)
             {
-                ghostTriggered = true;
+                _darkGhostTriggered = true;
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.DarknessStage1);
@@ -70,24 +71,23 @@ public class FireplaceController : MonoBehaviour
     }
     public void OnLogBurn()
     {
-        if (currentLogCount > 0)
+        if (_currentLogCount > 0)
         {
-            currentLogCount--;
-            SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume - 0.15f;
+            _currentLogCount--;
 
             // If a ghost event had been triggered and the count is now below threshold
-            if (ghostTriggered && currentLogCount < maxLog)
+            if (_fireGhostTriggered && _currentLogCount < maxLog)
             {
-                ghostTriggered = false;
+                _fireGhostTriggered = false;
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.FireplaceRepel);
                 }
             }
 
-            if (!ghostTriggered && currentLogCount < minLog)
+            if (!_darkGhostTriggered && _currentLogCount < minLog)
             {
-                ghostTriggered = true;
+                _darkGhostTriggered = true;
                 if (EventManager.Instance != null)
                 {
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.DarknessStage1);

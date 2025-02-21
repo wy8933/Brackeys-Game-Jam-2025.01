@@ -30,12 +30,14 @@ public class Log : MonoBehaviour
                 fireplaceController.OnLogBurn();
             }
 
+            SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume - 0.15f;
             Destroy(gameObject);
         }
     }
 
-    public void StartBurn() 
+    public void StartBurn()
     {
+        SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume + 0.15f;
         startBurn = true;
         if (GameTimer.Instance != null)
         {
@@ -44,8 +46,9 @@ public class Log : MonoBehaviour
     }
 
     public void StopBurn() 
-    { 
-        startBurn= false;
+    {
+        SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume - 0.15f;
+        startBurn = false;
 
         float currentGameTime = GameTimer.Instance.GetTimeElapsed();
         burnDuration -= currentGameTime - startTime;
