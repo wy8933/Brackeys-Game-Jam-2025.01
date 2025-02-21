@@ -47,6 +47,7 @@ public class FireplaceController : MonoBehaviour
         if (currentLogCount > 0)
         {
             currentLogCount--;
+            SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume - 0.15f;
 
             // If a ghost event had been triggered and the count is now below threshold
             if (ghostTriggered && currentLogCount < maxLog)
