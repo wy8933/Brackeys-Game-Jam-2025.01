@@ -18,11 +18,7 @@ public class Curtain : CoveringObject
 
     public void SetCover()
     {
-        if ((Vector2)transform.position != _origin)
-        {
-            isCovering = true;
-        }
-
+        isCovering = true;
     }
     void Update()
     {

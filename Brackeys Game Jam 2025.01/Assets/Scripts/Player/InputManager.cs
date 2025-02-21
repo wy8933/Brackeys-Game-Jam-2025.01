@@ -57,7 +57,7 @@ public class InputManager : MonoBehaviour
         
         if (selectedObject.CompareTag("Curtain"))
         {
-            Curtain curtain =selectedObject.GetComponent<Curtain>();
+            Curtain curtain = selectedObject.GetComponent<Curtain>();
             if (curtain)
             {
                 curtain.SetCover();
