@@ -11,6 +11,7 @@ public class HungryGhostPortraitController : MonoBehaviour
             {
                 EventManager.Instance.TriggerGhostEventExternally(GameEvent.HungryGhostRepel);
                 Destroy(other.gameObject);
+                Debug.Log("NOM NOM");
             }
         }
     }

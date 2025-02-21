@@ -10,7 +10,6 @@ public class CoveringObject : MonoBehaviour
     public EventManager eventManager;
 
     private Collider2D _collider;
-
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();
