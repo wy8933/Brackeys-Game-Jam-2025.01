@@ -12,10 +12,6 @@ public class Log : MonoBehaviour
 
     void Start()
     {
-        if (GameTimer.Instance != null)
-        {
-            startTime = GameTimer.Instance.GetTimeElapsed();
-        }
         // Automatically find the FireplaceController in the scene
         fireplaceController = FindObjectOfType<FireplaceController>();
     }
@@ -36,5 +32,22 @@ public class Log : MonoBehaviour
 
             Destroy(gameObject);
         }
+    }
+
+    public void StartBurn() 
+    {
+        startBurn = true;
+        if (GameTimer.Instance != null)
+        {
+            startTime = GameTimer.Instance.GetTimeElapsed();
+        }
+    }
+
+    public void StopBurn() 
+    { 
+        startBurn= false;
+
+        float currentGameTime = GameTimer.Instance.GetTimeElapsed();
+        burnDuration -= currentGameTime - startTime;
     }
 }

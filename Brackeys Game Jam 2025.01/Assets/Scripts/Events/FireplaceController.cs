@@ -17,7 +17,7 @@ public class FireplaceController : MonoBehaviour
     {
         if (collision.CompareTag("Log"))
         {
-            collision.GetComponent<Log>().startBurn = true;
+            collision.GetComponent<Log>().StartBurn();
             currentLogCount++;
 
             // If log count reaches or exceeds threshold and ghost event hasn't yet been triggered, trigger it.
@@ -42,6 +42,32 @@ public class FireplaceController : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Log"))
+        {
+            collision.GetComponent<Log>().StopBurn();
+            currentLogCount--;
+
+            if (ghostTriggered && currentLogCount < maxLog)
+            {
+                ghostTriggered = false;
+                if (EventManager.Instance != null)
+                {
+                    EventManager.Instance.TriggerGhostEventExternally(GameEvent.FireplaceRepel);
+                }
+            }
+
+            if (!ghostTriggered && currentLogCount < minLog)
+            {
+                ghostTriggered = true;
+                if (EventManager.Instance != null)
+                {
+                    EventManager.Instance.TriggerGhostEventExternally(GameEvent.DarknessStage1);
+                }
+            }
+        }
+    }
     public void OnLogBurn()
     {
         if (currentLogCount > 0)
