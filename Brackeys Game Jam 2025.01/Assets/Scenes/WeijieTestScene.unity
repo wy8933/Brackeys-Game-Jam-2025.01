@@ -265,6 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113261231}
   - component: {fileID: 113261232}
+  - component: {fileID: 113261233}
   m_Layer: 0
   m_Name: Candy Bar
   m_TagString: Untagged
@@ -342,6 +343,21 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &113261233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113261230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a1f065e51650cb4c9f3e7a707190fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOpen: 0
+  chocolateStates: []
+  rugMonsterTriggerInterval: 10
 --- !u!1 &114715678
 GameObject:
   m_ObjectHideFlags: 0
