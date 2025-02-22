@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PortraitAnimator
+  m_Controller: {fileID: 9100000, guid: 22484c8c67736914b896f9f52cc234a5, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 6c6739c722777eb47a7ac9f6e5d3060a, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: f422f4efee34c8b409d916935abe47a7, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 5c9527d4e19035e42a9053c0894b83ea, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c44338642d444d4eaaecd778d56bf14, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 51edc805a0497eb419b3a21b12a4bbc1, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: b9aa447890a96874dac62aa75cafb6f8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: d54a3fcdf4d541c47ac66c7c844204cd, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: d7dcb4b6691110d4b8b65abb59108477, type: 2}

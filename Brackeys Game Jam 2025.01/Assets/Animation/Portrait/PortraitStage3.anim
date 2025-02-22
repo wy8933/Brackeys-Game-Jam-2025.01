@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RugStage1
+  m_Name: PortraitStage3
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,11 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 88a1798a6804ac147855b05467c75236, type: 3}
-    - time: 1.0333333
-      value: {fileID: 21300000, guid: 937ade56222d46140bce73f1f0bfa159, type: 3}
-    - time: 2
-      value: {fileID: 21300000, guid: 67cbb505329fa5446bbb44e57777c6dc, type: 3}
+      value: {fileID: 21300000, guid: 96120b241b4ce8d45b65b93a3ce27d25, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,15 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 21300000, guid: 88a1798a6804ac147855b05467c75236, type: 3}
-    - {fileID: 21300000, guid: 937ade56222d46140bce73f1f0bfa159, type: 3}
-    - {fileID: 21300000, guid: 67cbb505329fa5446bbb44e57777c6dc, type: 3}
+    - {fileID: 21300000, guid: 96120b241b4ce8d45b65b93a3ce27d25, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 2.0166667
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
