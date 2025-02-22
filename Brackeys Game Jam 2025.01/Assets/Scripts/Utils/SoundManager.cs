@@ -14,12 +14,15 @@ public class SoundManager : MonoBehaviour
     public AudioSource SFX_Clock;
     public AudioSource SFX_OneShots;
     public AudioSource BGM;
+    public AudioSource BGM_Intense;
     public AudioClip[] UIClips;
     public AudioClip[] LoopingSFXAssets;
     public AudioClip[] OneShotSFXAssets;
+    public AudioClip[] MusicAssets;
     public Dictionary<string, AudioClip> UIclipDictionary = new Dictionary<string, AudioClip>();
     public Dictionary<string, AudioClip> SFXLoopsclipDictionary = new Dictionary<string, AudioClip>();
     public Dictionary<string, AudioClip> SFXOneShotsclipDictionary = new Dictionary<string, AudioClip>();
+    public Dictionary<string, AudioClip> MusicclipDictionary = new Dictionary<string, AudioClip>();
 
     public void Awake()
     {
@@ -49,9 +52,15 @@ public class SoundManager : MonoBehaviour
         {
             SFXOneShotsclipDictionary[clip.name] = clip;
         }
+        foreach (var clip in MusicAssets)
+        {
+            MusicclipDictionary[clip.name] = clip;
+        }
 
         playLoopingSFX("SFX_Clock_Ticking",SFX_Clock);
         playLoopingSFX("SFX_Ambience_Fireplace",SFX_Fireplace);
+        playLoopingMusic("BGM",BGM);
+        playLoopingMusic("BGM_Intense_Synth",BGM_Intense);
     }
     public void Start()
     {
@@ -86,6 +95,18 @@ public class SoundManager : MonoBehaviour
     public void playLoopingSFX(string clipName, AudioSource audioSource)
     {
         if (SFXLoopsclipDictionary.TryGetValue(clipName, out AudioClip clip))
+        {
+            audioSource.clip = clip;
+            audioSource.Play();
+        }
+        else
+        {
+            Debug.LogError($"Clip with ID '{clipName}' not found!");
+        }
+    }
+    public void playLoopingMusic(string clipName, AudioSource audioSource)
+    {
+        if (MusicclipDictionary.TryGetValue(clipName, out AudioClip clip))
         {
             audioSource.clip = clip;
             audioSource.Play();

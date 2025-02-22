@@ -302,7 +302,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -770,7 +770,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -1272,6 +1272,7 @@ GameObject:
   m_Component:
   - component: {fileID: 798769021}
   - component: {fileID: 798769022}
+  - component: {fileID: 798769023}
   m_Layer: 0
   m_Name: Music_Intense_Audiosource
   m_TagString: Untagged
@@ -1306,10 +1307,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1382,6 +1383,31 @@ AudioSource:
     - serializedVersion: 3
       time: 0
       value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!169 &798769023
+AudioLowPassFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798769020}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_LowpassResonanceQ: 1
+  lowpassLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.054115508
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -2855,10 +2881,10 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -3413,6 +3439,7 @@ MonoBehaviour:
   SFX_Clock: {fileID: 1006197519}
   SFX_OneShots: {fileID: 69666060}
   BGM: {fileID: 1720346378}
+  BGM_Intense: {fileID: 798769022}
   UIClips:
   - {fileID: 8300000, guid: 70c066be434c949e6957fab5a4b207dd, type: 3}
   - {fileID: 8300000, guid: c547119b2994646ee83b3a0db104fe36, type: 3}
@@ -3430,6 +3457,9 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5b3ab2c5fe26844b1879c048fe44746f, type: 3}
   - {fileID: 8300000, guid: 1f27c6d3ae04e41fd82ac6a2cda87696, type: 3}
   - {fileID: 8300000, guid: fccb80ca5b0ca4e2fbaa50db8f0e86b3, type: 3}
+  MusicAssets:
+  - {fileID: 8300000, guid: d7cbb343a61f92a47b1d6b4cd9c03336, type: 3}
+  - {fileID: 8300000, guid: a2d5e386cf983844dbaeeef8d68bf704, type: 3}
 --- !u!1 &2014875965
 GameObject:
   m_ObjectHideFlags: 0
