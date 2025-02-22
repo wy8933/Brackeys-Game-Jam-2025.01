@@ -312,8 +312,14 @@ public class EventManager : MonoBehaviour
     private IEnumerator AutoProgressGhost(GameEventData nextTimedEvent)
     {
         yield return new WaitForSeconds(nextTimedEvent.nextStageTime);
-        Debug.Log("Auto-progressing to next ghost stage: " + nextTimedEvent.eventName);
-        TriggerGhostEventExternally(nextTimedEvent.eventName);
+
+        // If the series didn't stop, auto progress
+        string series = GetGhostSeries(nextTimedEvent.eventName);
+        if (ghostSeriesTriggered[series])
+        {
+            Debug.Log("Auto-progressing to next ghost stage: " + nextTimedEvent.eventName);
+            TriggerGhostEventExternally(nextTimedEvent.eventName);
+        }
     }
 
     private string GetGhostSeries(GameEvent gameEvent)

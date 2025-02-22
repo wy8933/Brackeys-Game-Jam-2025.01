@@ -572,7 +572,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: f6e86bd984877054da7d3202f974e765, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1887,7 +1887,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 54746e5ad9aebe54da7bb34c02426798, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4689,7 +4689,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 54746e5ad9aebe54da7bb34c02426798, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4697,7 +4697,7 @@ SpriteRenderer:
   m_Size: {x: 38.399998, y: 21.599998}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1808334304
@@ -5047,16 +5047,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693e7ae84d6ee62448a2d195e0fe665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  autoProgressMultiplier: 1
+  autoProgressMultiplier: 0.2
   rug: {fileID: 1131838397}
   uninvitedAnimator: {fileID: 108336478}
   door: {fileID: 1190736300}
   darknessAnimator: {fileID: 1426906825}
   rugAnimator: {fileID: 1131838401}
   portraitAnimator: {fileID: 166501020}
-  windowAnimator: {fileID: 0}
+  windowAnimator: {fileID: 1333843255}
   fireAnimator: {fileID: 0}
-  TVAnimator: {fileID: 0}
+  TVAnimator: {fileID: 1808334305}
+  TVLight: {fileID: 660621202}
 --- !u!114 &1895437106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5082,7 +5083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea889a61f5172914e8ca8c9b4480b86c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerInterval: 30
+  triggerInterval: 5
   autoTriggerGhostEvents: 01000000060000000d000000
 --- !u!114 &1895437108
 MonoBehaviour:
