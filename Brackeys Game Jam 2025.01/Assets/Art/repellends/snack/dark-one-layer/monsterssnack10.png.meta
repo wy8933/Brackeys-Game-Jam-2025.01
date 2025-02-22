@@ -64,7 +64,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -301,7 +301,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -310,7 +310,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      monsterssnack10_0: 2994977311481880398
+      monsterssnack10_1: -7144207480298632289
+      monsterssnack10_2: -639114615666928932
+      monsterssnack10_3: -2127829290138605879
+      monsterssnack10_4: 6486712309135688206
+      monsterssnack10_5: -6079516386651696809
+      monsterssnack10_6: 3490640290548932481
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

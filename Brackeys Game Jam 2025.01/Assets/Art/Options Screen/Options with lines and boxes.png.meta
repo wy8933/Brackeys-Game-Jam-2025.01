@@ -109,7 +109,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -676,7 +676,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -685,7 +685,29 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Options with lines and boxes_0: 9166277381615823673
+      Options with lines and boxes_1: 5383100784870729181
+      Options with lines and boxes_10: 5428243801618415318
+      Options with lines and boxes_11: -5940210440943187603
+      Options with lines and boxes_12: -8992566248179076433
+      Options with lines and boxes_13: -8703941254669598173
+      Options with lines and boxes_14: 2120914412728808260
+      Options with lines and boxes_15: -7078047418602621575
+      Options with lines and boxes_16: -7683292503484466327
+      Options with lines and boxes_17: 4390938734687226444
+      Options with lines and boxes_18: 2207066481731253625
+      Options with lines and boxes_19: 5231827844614660363
+      Options with lines and boxes_2: 2982743835638208731
+      Options with lines and boxes_20: 339462562189518694
+      Options with lines and boxes_21: -3399569960153973828
+      Options with lines and boxes_3: -8250651971358211275
+      Options with lines and boxes_4: 6608469730872789751
+      Options with lines and boxes_5: 357062676227280926
+      Options with lines and boxes_6: 4615597282766304269
+      Options with lines and boxes_7: -8422624379427926632
+      Options with lines and boxes_8: 6934570278908198822
+      Options with lines and boxes_9: 6489277393024188160
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

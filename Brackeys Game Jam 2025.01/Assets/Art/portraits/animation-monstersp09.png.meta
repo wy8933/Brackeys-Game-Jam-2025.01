@@ -130,7 +130,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -851,7 +851,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -860,7 +860,36 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation-monstersp09_0: 5653781654012526606
+      animation-monstersp09_1: -7472808963611339263
+      animation-monstersp09_10: 3996735713849696460
+      animation-monstersp09_11: 2936018105808483775
+      animation-monstersp09_12: 5811984143812053538
+      animation-monstersp09_13: -87150422579864038
+      animation-monstersp09_14: -4484521289635123022
+      animation-monstersp09_15: -697526537079245878
+      animation-monstersp09_16: -6581516590808987622
+      animation-monstersp09_17: -641134458815684443
+      animation-monstersp09_18: 2986259814179345898
+      animation-monstersp09_19: 1552737885037376526
+      animation-monstersp09_2: 6512837159317223457
+      animation-monstersp09_20: -5068036622785266374
+      animation-monstersp09_21: 1543864229948520050
+      animation-monstersp09_22: 2882247918329151813
+      animation-monstersp09_23: 3873610414713209470
+      animation-monstersp09_24: 7318119468000977947
+      animation-monstersp09_25: 2871236844467000288
+      animation-monstersp09_26: -1610777049833216662
+      animation-monstersp09_27: 2411237987980136013
+      animation-monstersp09_28: 5649142040787091601
+      animation-monstersp09_3: 2973105685998487052
+      animation-monstersp09_4: -5721453759999752817
+      animation-monstersp09_5: 8403766996755998053
+      animation-monstersp09_6: -4660035403875665730
+      animation-monstersp09_7: -475552305951536937
+      animation-monstersp09_8: 2991686045728905698
+      animation-monstersp09_9: 6274307677292211553
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
