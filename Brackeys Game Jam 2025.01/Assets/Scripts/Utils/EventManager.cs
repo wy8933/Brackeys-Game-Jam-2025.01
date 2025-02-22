@@ -103,8 +103,9 @@ public class EventManager : MonoBehaviour
     public Animator uninvitedAnimator;
     public GameObject door;
 
-
     public Animator darknessAnimator;
+
+    public Animator rugAnimator;
 
     public void Awake()
     {
@@ -576,6 +577,11 @@ public class EventManager : MonoBehaviour
         }
         Debug.Log("Rug Monster Stage 1 triggered");
         rug.StartRugMonster();
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Stage1");
+        }
     }
 
     private void HandleRugMonsterStage2()
@@ -583,6 +589,11 @@ public class EventManager : MonoBehaviour
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("Rug Monster Stage 2 triggered");
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Stage2");
+        }
     }
 
     private void HandleRugMonsterStage3()
@@ -590,12 +601,22 @@ public class EventManager : MonoBehaviour
         SoundManager.Instance.BGM_Intense.volume = 1.1f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,6000.0f,2.0f);
         Debug.Log("Rug Monster Stage 3 triggered");
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Stage3");
+        }
     }
 
     private void HandleRugMonsterRepel() 
     {
         SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
         Debug.Log("RugMonster Repel triggered!");
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Repel");
+        }
     }
     #endregion
 
