@@ -22,15 +22,15 @@ public class SceneLoadHandler : MonoBehaviour
         {
             SoundManager.Instance.playLoopingSFX("SFX_Clock_Ticking",SoundManager.Instance.SFX_Clock);
             SoundManager.Instance.playLoopingSFX("SFX_Ambience_Fireplace",SoundManager.Instance.SFX_Fireplace);
-            SoundManager.Instance.playLoopingMusic("BGM",SoundManager.Instance.BGM);
-            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense);
+            SoundManager.Instance.playLoopingMusic("BGM",SoundManager.Instance.BGM, 0.8f);
+           
         }
-        else if (scene.name == "MainMenu") //play correct sounds if menu is loaded
+        else if (scene.name == "MainMenu") // Play correct sounds if menu is loaded
         {
-            SoundManager.Instance.playLoopingMusic("BGM",SoundManager.Instance.BGM);//make this menu music
+            // Make this menu music
+            SoundManager.Instance.playLoopingMusic("BGM",SoundManager.Instance.BGM, 1.0f);
         }
         Debug.Log("New scene loaded: " + scene.name);
 
-        // You can add your custom logic here
     }
 }

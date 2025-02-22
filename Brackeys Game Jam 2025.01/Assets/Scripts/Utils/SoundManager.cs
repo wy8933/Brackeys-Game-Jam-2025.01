@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public AudioSource SFX_OneShots;
     public AudioSource BGM;
     public AudioSource BGM_Intense;
+    public AudioLowPassFilter BGM_Intense_LPF;
     public AudioClip[] UIClips;
     public AudioClip[] LoopingSFXAssets;
     public AudioClip[] OneShotSFXAssets;
@@ -57,6 +58,7 @@ public class SoundManager : MonoBehaviour
             MusicclipDictionary[clip.name] = clip;
         }
 
+        BGM_Intense_LPF = BGM_Intense.GetComponent<AudioLowPassFilter>();
          
     }
     public void Start()
@@ -100,11 +102,12 @@ public class SoundManager : MonoBehaviour
             Debug.LogError($"Clip with ID '{clipName}' not found!");
         }
     }
-    public void playLoopingMusic(string clipName, AudioSource audioSource)
+    public void playLoopingMusic(string clipName, AudioSource audioSource, float volume)
     {
         if (MusicclipDictionary.TryGetValue(clipName, out AudioClip clip))
         {
             audioSource.clip = clip;
+            audioSource.volume = volume;
             audioSource.Play();
         }
         else
@@ -114,6 +117,47 @@ public class SoundManager : MonoBehaviour
 
     }
 
-   
+    public void FadeAudio(AudioSource audioSource, float fadeOutTime)
+    {
+        StartCoroutine(FadeAudioCoroutine(audioSource, fadeOutTime));
+    }
+
+    public IEnumerator FadeAudioCoroutine(AudioSource audioSource, float fadeOutTime)
+    {
+        float startVolume = audioSource.volume;
+        while( audioSource.volume > 0)
+        {
+            audioSource.volume -= startVolume * Time.deltaTime / fadeOutTime;
+            yield return null;
+        }
+    }
+
+    public void LerpLPFCutoff(AudioLowPassFilter LPF,float endFreq ,float time)
+    {
+        LerpLPFCutoffCoroutine(LPF,endFreq,time);
+    }
+
+    public IEnumerator LerpLPFCutoffCoroutine(AudioLowPassFilter LPF, float end, float time)
+    {
+        float lerpTime = time/60;
+        float start = LPF.cutoffFrequency;
+
+        if (start > end)
+        {
+            while (start > end)
+            {
+                LPF.cutoffFrequency -= end * Time.deltaTime/time;
+                yield return null;
+            }
+
+        }
+        else if (end > start)
+        {
+            while (end > start)
+            {
+                LPF.cutoffFrequency += start * Time.deltaTime/time;
+            }
+        }
+    }
 
 }
