@@ -30,7 +30,14 @@ public class CoveringObject : MonoBehaviour
         if (IsFullyContained(collision)) 
         { 
             eventManager?.OnCovered(collision.gameObject);
-            eventManager?.TriggerGhostEventExternally(GameEvent.UninvitedRepel);
+            if (collision.CompareTag("Window"))
+            {
+                eventManager?.TriggerGhostEventExternally(GameEvent.WindowGhostRepel);
+            }
+            else
+            {
+                eventManager?.TriggerGhostEventExternally(GameEvent.UninvitedRepel);
+            }
         }
     }
 

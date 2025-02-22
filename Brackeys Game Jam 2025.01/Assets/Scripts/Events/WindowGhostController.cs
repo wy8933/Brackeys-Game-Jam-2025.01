@@ -37,6 +37,7 @@ public class WindowGhostController : MonoBehaviour
         {
             if (EventManager.Instance)
             {
+                Debug.Log(123);
                 EventManager.Instance.TriggerGhostEventExternally(GameEvent.WindowGhostRepel);
             }
         }
