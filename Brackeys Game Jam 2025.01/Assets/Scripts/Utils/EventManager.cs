@@ -324,22 +324,34 @@ public class EventManager : MonoBehaviour
     #region Window Ghost
     private void HandleWindowGhostStage1() 
     {
+       if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("WindowGhost Stage 1 triggered!"); 
     }
     private void HandleWindowGhostStage2() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("WindowGhost Stage 2 triggered!"); 
     }
     private void HandleWindowGhostStage3() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.0f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,7800.0f,2.0f);
         Debug.Log("WindowGhost Stage 3 triggered!"); 
     }
     private void HandleWindowGhostStage4() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.1f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,9000.0f,2.0f);
         Debug.Log("WindowGhost Stage 4 triggered!"); 
     }
     private void HandleWindowGhostRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,3.0f);
         Debug.Log("WindowGhost Repel triggered!"); 
     }
     #endregion
@@ -347,18 +359,28 @@ public class EventManager : MonoBehaviour
     #region TV Ghost
     private void HandleTVGhostStage1() 
     {
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("TVGhost Stage 1 triggered!"); 
     }
     private void HandleTVGhostStage2() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("TVGhost Stage 2 triggered!"); 
     }
     private void HandleTVGhostStage3() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.0f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,7800.0f,2.0f);
         Debug.Log("TVGhost Stage 3 triggered!"); 
     }
     private void HandleTVGhostRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,3.0f);
         Debug.Log("TVGhost Repel triggered!"); 
     }
 
@@ -367,14 +389,22 @@ public class EventManager : MonoBehaviour
     #region Rule Ghost
     private void HandleRuleGhostStage1() 
     {
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("RuleGhost Stage 1 triggered!"); 
     }
     private void HandleRuleGhostStage2() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("RuleGhost Stage 2 triggered!"); 
     }
     private void HandleRuleGhostRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,3.5f);
         Debug.Log("RuleGhost Repel triggered!"); 
     }
     #endregion
@@ -382,14 +412,23 @@ public class EventManager : MonoBehaviour
     #region Uninvited
     private void HandleUninvitedStage1() 
     {
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("Uninvited Stage 1 triggered!"); 
     }
     private void HandleUninvitedStage2() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("Uninvited Stage 2 triggered!"); 
     }
     private void HandleUninvitedStage3() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.1f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,8000.0f,2.0f);
         Debug.Log("Uninvited Stage 3 triggered!"); 
     }
     private void HandleUninvitedRepel() 
@@ -402,18 +441,28 @@ public class EventManager : MonoBehaviour
     // HungryGhost event methods
     private void HandleHungryGhostStage1() 
     {
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("HungryGhost Stage 1 triggered!"); 
     }
     private void HandleHungryGhostStage2() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("HungryGhost Stage 2 triggered!");
     }
     private void HandleHungryGhostStage3() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.1f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,8000.0f,2.0f);
         Debug.Log("HungryGhost Stage 3 triggered!"); 
     }
     private void HandleHungryGhostRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
         Debug.Log("HungryGhost Repel triggered!"); 
     }
     #endregion
@@ -422,14 +471,22 @@ public class EventManager : MonoBehaviour
     // Darkness event methods
     private void HandleDarknessStage1() 
     {
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("Darkness Stage 1 triggered!");
     }
     private void HandleDarknessStage2() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("Darkness Stage 2 triggered!"); 
     }
     private void HandleDarknessRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
         Debug.Log("Darkness Repel triggered!"); 
     }
     #endregion
@@ -438,18 +495,28 @@ public class EventManager : MonoBehaviour
     // Fireplace event methods
     private void HandleFireplaceStage1() 
     { 
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("Fireplace Stage 1 triggered!"); 
     }
     private void HandleFireplaceStage2()
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("Fireplace Stage 2 triggered!"); 
     }
     private void HandleFireplaceStage3() 
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.1f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,8000.0f,2.0f);
         Debug.Log("Fireplace Stage 3 triggered!");
     }
     private void HandleFireplaceRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
         Debug.Log("Fireplace Repel triggered!");
     }
     #endregion
@@ -457,22 +524,32 @@ public class EventManager : MonoBehaviour
     #region Rug Monster
     private void HandleRugMonsterStage1()
     {
+        if (!SoundManager.Instance.BGM_Intense.isPlaying)
+        {
+            SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
+            SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
+        }
         Debug.Log("Rug Monster Stage 1 triggered");
         rug.StartRugMonster();
     }
 
     private void HandleRugMonsterStage2()
     {
+        SoundManager.Instance.BGM_Intense.volume = 0.95f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("Rug Monster Stage 2 triggered");
     }
 
     private void HandleRugMonsterStage3()
     {
+        SoundManager.Instance.BGM_Intense.volume = 1.1f;
+        SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,6000.0f,2.0f);
         Debug.Log("Rug Monster Stage 3 triggered");
     }
 
     private void HandleRugMonsterRepel() 
     {
+        SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
         Debug.Log("RugMonster Repel triggered!");
     }
     #endregion
