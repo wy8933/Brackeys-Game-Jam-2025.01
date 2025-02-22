@@ -103,6 +103,9 @@ public class EventManager : MonoBehaviour
     public Animator uninvitedAnimator;
     public GameObject door;
 
+
+    public Animator darknessAnimator;
+
     public void Awake()
     {
         if (Instance == null)
@@ -503,17 +506,33 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
         Debug.Log("Darkness Stage 1 triggered!");
+
+        if (darknessAnimator != null)
+        {
+            darknessAnimator.SetTrigger("Stage1");
+        }
     }
     private void HandleDarknessStage2() 
     {
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
-        Debug.Log("Darkness Stage 2 triggered!"); 
+        Debug.Log("Darkness Stage 2 triggered!");
+
+        if (darknessAnimator != null)
+        {
+            darknessAnimator.SetTrigger("Stage2");
+        }
     }
+
     private void HandleDarknessRepel() 
     {
         SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
-        Debug.Log("Darkness Repel triggered!"); 
+        Debug.Log("Darkness Repel triggered!");
+
+        if (darknessAnimator != null)
+        {
+            darknessAnimator.SetTrigger("Repel");
+        }
     }
     #endregion
 
