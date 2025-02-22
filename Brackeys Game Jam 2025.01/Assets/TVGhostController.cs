@@ -5,7 +5,7 @@ public class TVGhostController : MonoBehaviour
     public int targetAntennaIndex;
     void Start()
     {
-        targetAntennaIndex = Random.Range(0,5);
+        Reset();
     }
 
     void Update()
@@ -15,7 +15,13 @@ public class TVGhostController : MonoBehaviour
             if (targetAntennaIndex == TVAntenna.Instance.index)
             {
                 EventManager.Instance.TriggerGhostEventExternally(GameEvent.TVGhostRepel);
+                Reset();
             }
         }
+    }
+
+    public void Reset()
+    {
+        targetAntennaIndex = Random.Range(0, 5);
     }
 }

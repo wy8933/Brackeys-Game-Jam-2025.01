@@ -1,13 +1,22 @@
 fileFormatVersion: 2
-guid: 730f8d000664a91479904ed405956457
+guid: bb3638d338d1589489a2e81776aca7ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8211649315026271693
-    second: closecurtains_0
+      213: -736959805449430301
+    second: You survived the night_0
   - first:
-      213: -2217707110470322395
-    second: closecurtains_1
+      213: -5651496629024809355
+    second: You survived the night_1
+  - first:
+      213: 7277473304670924459
+    second: You survived the night_2
+  - first:
+      213: 3562793804191941984
+    second: You survived the night_3
+  - first:
+      213: -3442002346611533954
+    second: You survived the night_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +138,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: closecurtains_0
+      name: You survived the night_0
       rect:
         serializedVersion: 2
-        x: 2791
-        y: 1147
-        width: 1049
-        height: 862
+        x: 26
+        y: 35
+        width: 88
+        height: 107
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,20 +153,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dcd783a7b83a5f170800000000000000
-      internalID: 8211649315026271693
+      spriteID: 3ea127626fac5c5f0800000000000000
+      internalID: -736959805449430301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: closecurtains_1
+      name: You survived the night_1
       rect:
         serializedVersion: 2
-        x: 3670
-        y: 1984
-        width: 23
-        height: 31
+        x: 99
+        y: 34
+        width: 158
+        height: 86
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +175,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 527fe88022f1931e0800000000000000
-      internalID: -2217707110470322395
+      spriteID: 57e98a142c9d191b0800000000000000
+      internalID: -5651496629024809355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You survived the night_2
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 33
+        width: 507
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae6c43b967cef460800000000000000
+      internalID: 7277473304670924459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You survived the night_3
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 33
+        width: 203
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 065c2d2a616917130800000000000000
+      internalID: 3562793804191941984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: You survived the night_4
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 11
+        width: 320
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e77982e2a1d8b30d0800000000000000
+      internalID: -3442002346611533954
       vertices: []
       indices: 
       edges: []
@@ -186,8 +261,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      closecurtains_0: 8211649315026271693
-      closecurtains_1: -2217707110470322395
+      You survived the night_0: -736959805449430301
+      You survived the night_1: -5651496629024809355
+      You survived the night_2: 7277473304670924459
+      You survived the night_3: 3562793804191941984
+      You survived the night_4: -3442002346611533954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

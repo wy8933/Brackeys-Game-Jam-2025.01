@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 730f8d000664a91479904ed405956457
+guid: 06ba2c4ea45ca4a40ad6797f9acfd691
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8211649315026271693
-    second: closecurtains_0
-  - first:
-      213: -2217707110470322395
-    second: closecurtains_1
+      213: -7792371938975237494
+    second: ds4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -129,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: closecurtains_0
+      name: ds4_0
       rect:
         serializedVersion: 2
-        x: 2791
-        y: 1147
-        width: 1049
-        height: 862
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -144,30 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dcd783a7b83a5f170800000000000000
-      internalID: 8211649315026271693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: closecurtains_1
-      rect:
-        serializedVersion: 2
-        x: 3670
-        y: 1984
-        width: 23
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 527fe88022f1931e0800000000000000
-      internalID: -2217707110470322395
+      spriteID: a8ab8abd10febd390800000000000000
+      internalID: -7792371938975237494
       vertices: []
       indices: 
       edges: []
@@ -186,8 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      closecurtains_0: 8211649315026271693
-      closecurtains_1: -2217707110470322395
+      ds4_0: -7792371938975237494
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

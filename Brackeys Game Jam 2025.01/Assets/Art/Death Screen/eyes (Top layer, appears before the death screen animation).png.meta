@@ -1,0 +1,403 @@
+fileFormatVersion: 2
+guid: 6572b972d158a6e46ac3545016ab81b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4580514207019340640
+    second: eyes (Top layer, appears before the death screen animation)_0
+  - first:
+      213: 7942542315743975927
+    second: eyes (Top layer, appears before the death screen animation)_1
+  - first:
+      213: -112284756263699271
+    second: eyes (Top layer, appears before the death screen animation)_2
+  - first:
+      213: -252089134068821652
+    second: eyes (Top layer, appears before the death screen animation)_3
+  - first:
+      213: 6527397404941343060
+    second: eyes (Top layer, appears before the death screen animation)_4
+  - first:
+      213: 750848317342934790
+    second: eyes (Top layer, appears before the death screen animation)_5
+  - first:
+      213: 2741118042193019588
+    second: eyes (Top layer, appears before the death screen animation)_6
+  - first:
+      213: -563035930937853023
+    second: eyes (Top layer, appears before the death screen animation)_7
+  - first:
+      213: -7048820896451868642
+    second: eyes (Top layer, appears before the death screen animation)_8
+  - first:
+      213: 1195815183596246085
+    second: eyes (Top layer, appears before the death screen animation)_9
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_0
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1004
+        width: 51
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06394061761419f30800000000000000
+      internalID: 4580514207019340640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_1
+      rect:
+        serializedVersion: 2
+        x: 1101
+        y: 960
+        width: 48
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f99d6f9724993e60800000000000000
+      internalID: 7942542315743975927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_2
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 788
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bcf53deb95117ef0800000000000000
+      internalID: -112284756263699271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_3
+      rect:
+        serializedVersion: 2
+        x: 1665
+        y: 796
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c619718a446608cf0800000000000000
+      internalID: -252089134068821652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_4
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 682
+        width: 47
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 459d55d2b59f59a50800000000000000
+      internalID: 6527397404941343060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_5
+      rect:
+        serializedVersion: 2
+        x: 570
+        y: 525
+        width: 38
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607ec63019c8b6a00800000000000000
+      internalID: 750848317342934790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_6
+      rect:
+        serializedVersion: 2
+        x: 1662
+        y: 429
+        width: 28
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c2445816586a0620800000000000000
+      internalID: 2741118042193019588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_7
+      rect:
+        serializedVersion: 2
+        x: 1697
+        y: 429
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abfaaccdc1bf28f0800000000000000
+      internalID: -563035930937853023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_8
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 86
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e18c2adadbe8d2e90800000000000000
+      internalID: -7048820896451868642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: eyes (Top layer, appears before the death screen animation)_9
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 93
+        width: 29
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 544d543e293689010800000000000000
+      internalID: 1195815183596246085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      eyes (Top layer, appears before the death screen animation)_0: 4580514207019340640
+      eyes (Top layer, appears before the death screen animation)_1: 7942542315743975927
+      eyes (Top layer, appears before the death screen animation)_2: -112284756263699271
+      eyes (Top layer, appears before the death screen animation)_3: -252089134068821652
+      eyes (Top layer, appears before the death screen animation)_4: 6527397404941343060
+      eyes (Top layer, appears before the death screen animation)_5: 750848317342934790
+      eyes (Top layer, appears before the death screen animation)_6: 2741118042193019588
+      eyes (Top layer, appears before the death screen animation)_7: -563035930937853023
+      eyes (Top layer, appears before the death screen animation)_8: -7048820896451868642
+      eyes (Top layer, appears before the death screen animation)_9: 1195815183596246085
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

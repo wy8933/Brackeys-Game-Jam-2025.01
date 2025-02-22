@@ -15,7 +15,13 @@ public class InputManager : MonoBehaviour
     public Vector3 mousePosition;
     public Camera camera;
     
-    private GameObject selectedObject;
+    public GameObject selectedObject;
+
+    public Texture2D idleCursorTexture;
+    public Texture2D holdCursorTexture;
+
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = new Vector2(-1,0);
 
     public void Awake()
     {
@@ -64,7 +70,8 @@ public class InputManager : MonoBehaviour
     private void OnPrimaryAction(InputAction.CallbackContext context)
     {
         selectedObject = GetClickedObject();
-        
+        Cursor.SetCursor(holdCursorTexture, hotSpot, cursorMode);
+
         if (selectedObject)
         {
             if (selectedObject.CompareTag("Curtain"))
@@ -93,6 +100,7 @@ public class InputManager : MonoBehaviour
     {
         isDragging = false;
         selectedObject = null;
+        Cursor.SetCursor(idleCursorTexture, hotSpot, cursorMode);
     }
     private void OnPauseAction(InputAction.CallbackContext context)
     {
@@ -107,7 +115,7 @@ public class InputManager : MonoBehaviour
     }
     private void Update()
     {
-        if (isDragging && selectedObject && !PauseMenu.Instance.isPaused)
+        if (isDragging && selectedObject && !selectedObject.CompareTag("UnMoveable") && !PauseMenu.Instance.isPaused)
         {
             Vector3 targetPosition = camera.ScreenToWorldPoint(mousePosition);
             targetPosition.z = 0;

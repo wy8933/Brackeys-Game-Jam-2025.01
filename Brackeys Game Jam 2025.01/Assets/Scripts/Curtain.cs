@@ -2,33 +2,58 @@ using UnityEngine;
 
 public class Curtain : CoveringObject
 {
-    private const float LERP_TIME = .3f;
     private float currentTime;
     private bool isCovering;
-    
-    private Vector2 _origin;
-    private Vector2 velocity = Vector2.zero;
-    public Vector2 coverPoint;
+
+    public SpriteRenderer curtainSprite;
+
+    public float revertTime = 5f;
+
+    private float lastClickGameTime;
+    private bool isClicked = false;
 
     void Start()
     {
-        _origin = transform.position;
+
+        if (curtainSprite != null)
+        {
+            curtainSprite.enabled = false;
+        }
     }
 
-    public void SetCover() { isCovering = !isCovering; }
-    public float GetCurrentCoverTime() { return currentTime; }
-    
+    public void SetCover()
+    {
+        isCovering = !isCovering;
+    }
+
+    public float GetCurrentCoverTime()
+    {
+        return currentTime;
+    }
+
     void Update()
     {
-        if (isCovering)
+        if (isClicked && GameTimer.Instance != null)
         {
-            currentTime += Time.deltaTime;
-            transform.localPosition = Vector2.SmoothDamp(transform.position, coverPoint, ref velocity, LERP_TIME);
+            float currentGameTime = GameTimer.Instance.GetTimeElapsed();
+            if (currentGameTime - lastClickGameTime >= revertTime)
+            {
+                curtainSprite.enabled = false;
+                isClicked =false;
+            }
         }
-        else
+    }
+
+    private void OnMouseDown()
+    {
+        if (!isClicked && curtainSprite != null)
         {
-            currentTime = 0;
-            transform.position = Vector2.SmoothDamp(transform.position, _origin, ref velocity, LERP_TIME);
+            curtainSprite.enabled = true;
+            isClicked = true;
+
+            lastClickGameTime = GameTimer.Instance.GetTimeElapsed();
+
+            EventManager.Instance.TriggerGhostEventExternally(GameEvent.WindowGhostRepel);
         }
     }
 }
