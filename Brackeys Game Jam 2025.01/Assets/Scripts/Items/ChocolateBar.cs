@@ -9,15 +9,17 @@ public class ChocolateBar : MonoBehaviour
     public Sprite[] chocolateStates;
 
     // Reference to the SpriteRenderer component
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
 
     // Tracks the current state
-    private int currentPieceIndex = 0;
+    public int currentPieceIndex = 0;
 
     [Tooltip("Time interval between triggering the Rug Monster when the bar is open")]
     public float rugMonsterTriggerInterval = 30f;
     private float lastRugMonsterTriggerTime = 0f;
 
+
+    public GameObject chocolate;
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -42,6 +44,7 @@ public class ChocolateBar : MonoBehaviour
                 lastRugMonsterTriggerTime = currentTime;
             }
         }
+        transform.position = new Vector3(0, 0, 0);
     }
 
     /// <summary>
@@ -58,12 +61,6 @@ public class ChocolateBar : MonoBehaviour
     /// </summary>
     public void EatPiece()
     {
-        if (!isOpen)
-        {
-            Debug.LogWarning("Cannot eat! The chocolate bar is closed. Open it first");
-            return;
-        }
-
         // Check if there are remaining pieces to eat
         if (currentPieceIndex < chocolateStates.Length - 1)
         {
@@ -74,6 +71,21 @@ public class ChocolateBar : MonoBehaviour
         else
         {
             Debug.Log("The chocolate bar is fully eaten");
+        }
+    }
+
+    private void OnMouseDown()
+    {
+        if (currentPieceIndex < chocolateStates.Length - 1) 
+        {
+            EatPiece();
+            if (chocolate != null && isOpen)
+            {
+                Vector3 spawnPosition = new Vector3(8, -8, 0);
+                GameObject gameObject = Instantiate(chocolate, spawnPosition, Quaternion.identity);
+                InputManager.Instance.selectedObject = gameObject;
+            }
+            OpenBar();
         }
     }
 }

@@ -15,7 +15,7 @@ public class InputManager : MonoBehaviour
     public Vector3 mousePosition;
     public Camera camera;
     
-    private GameObject selectedObject;
+    public GameObject selectedObject;
 
     public void Awake()
     {
@@ -107,7 +107,7 @@ public class InputManager : MonoBehaviour
     }
     private void Update()
     {
-        if (isDragging && selectedObject && !PauseMenu.Instance.isPaused)
+        if (isDragging && selectedObject && !selectedObject.CompareTag("UnMoveable") && !PauseMenu.Instance.isPaused)
         {
             Vector3 targetPosition = camera.ScreenToWorldPoint(mousePosition);
             targetPosition.z = 0;
