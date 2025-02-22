@@ -10,9 +10,14 @@ public class FireplaceController : MonoBehaviour
     [Tooltip("Minimum number of logs needed to avoid darkness")]
     public int minLog = 1;
 
+    [SerializeField]
     private int _currentLogCount = 0;
     private bool _fireGhostTriggered = false;
     private bool _darkGhostTriggered = false;
+
+    public void Start()
+    {
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -40,6 +45,7 @@ public class FireplaceController : MonoBehaviour
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.DarknessRepel);
                 }
             }
+            Debug.Log("Log Enter");
         }
     }
 
@@ -67,7 +73,9 @@ public class FireplaceController : MonoBehaviour
                     EventManager.Instance.TriggerGhostEventExternally(GameEvent.DarknessStage1);
                 }
             }
+            Debug.Log("Log Exit");
         }
+        
     }
     public void OnLogBurn()
     {
