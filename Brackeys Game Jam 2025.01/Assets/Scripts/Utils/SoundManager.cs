@@ -58,7 +58,10 @@ public class SoundManager : MonoBehaviour
             MusicclipDictionary[clip.name] = clip;
         }
 
-        BGM_Intense_LPF = BGM_Intense.GetComponent<AudioLowPassFilter>();
+        if (BGM_Intense)
+        {
+            BGM_Intense_LPF = BGM_Intense.GetComponent<AudioLowPassFilter>();
+        }
          
     }
     public void Start()
