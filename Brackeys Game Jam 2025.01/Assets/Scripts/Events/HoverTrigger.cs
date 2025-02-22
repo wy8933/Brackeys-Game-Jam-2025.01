@@ -29,7 +29,7 @@ public class HoverTrigger : MonoBehaviour
     private void OnMouseEnter()
     {
         isHovering = true;
-        // Record the game time when the mouse starts hovering.
+        // Record the game time when the mouse starts hovering
         if (GameTimer.Instance != null)
         {
             hoverStartTime = GameTimer.Instance.GetTimeElapsed();
@@ -40,5 +40,6 @@ public class HoverTrigger : MonoBehaviour
     {
         isHovering = false;
         eventTriggered = false;
+        EventManager.Instance.TriggerGhostEventExternally(GameEvent.RuleGhostRepel);
     }
 }

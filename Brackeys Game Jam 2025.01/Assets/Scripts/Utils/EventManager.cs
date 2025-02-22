@@ -60,7 +60,6 @@ public enum GameEvent
 public class EventManager : MonoBehaviour
 {
     public static EventManager Instance;
-    
     private Dictionary<string, bool> ghostSeriesTriggered = new Dictionary<string, bool>();
 
     private Dictionary<GameEvent, GameEventData> ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
@@ -97,6 +96,8 @@ public class EventManager : MonoBehaviour
         { GameEvent.RugMonsterStage2, new GameEventData{ eventName = GameEvent.RugMonsterStage3, nextStageTime = 30f } },
     };
 
+    [Header("Items")]
+    public Rug rug;
 
     public void Awake()
     {
@@ -457,6 +458,7 @@ public class EventManager : MonoBehaviour
     private void HandleRugMonsterStage1()
     {
         Debug.Log("Rug Monster Stage 1 triggered");
+        rug.StartRugMonster();
     }
 
     private void HandleRugMonsterStage2()

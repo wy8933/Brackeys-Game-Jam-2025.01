@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager Instance;
+
     public InputActionReference PrimaryAction;
     public InputActionReference MousePositionAction;
 
@@ -15,7 +17,6 @@ public class InputManager : MonoBehaviour
 
         RaycastHit2D hit = Physics2D.Raycast(camera.ScreenToWorldPoint(mousePosition), Vector2.zero);
 
-
         if (hit) 
         {
             return hit.collider.gameObject;
@@ -26,6 +27,14 @@ public class InputManager : MonoBehaviour
 
     private void Awake()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else { 
+            Destroy(this);
+        }
+
         PrimaryAction.action.Enable();
         MousePositionAction.action.Enable();
 
@@ -37,9 +46,10 @@ public class InputManager : MonoBehaviour
     private IEnumerator OnMouseDrag()
     {
         isDragging = true;
-        while (isDragging && GetClickedObject()!=null)
+        GameObject clickedObject = GetClickedObject();
+        while (clickedObject != null && !clickedObject.CompareTag("UnMoveable"))
         {
-            GetClickedObject().transform.position = camera.ScreenToWorldPoint(mousePosition) + new Vector3(0,0,10);
+            clickedObject.transform.position = camera.ScreenToWorldPoint(mousePosition) + new Vector3(0,0,10);
             yield return null;
         }
 
