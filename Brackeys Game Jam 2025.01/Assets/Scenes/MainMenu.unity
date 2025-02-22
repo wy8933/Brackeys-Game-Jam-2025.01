@@ -250,6 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 222629444}
   - component: {fileID: 222629443}
+  - component: {fileID: 222629445}
   m_Layer: 0
   m_Name: SoundManager
   m_TagString: Untagged
@@ -276,12 +277,15 @@ MonoBehaviour:
   SFX_Clock: {fileID: 0}
   SFX_OneShots: {fileID: 0}
   BGM: {fileID: 607293130}
+  BGM_Intense: {fileID: 0}
   UIClips:
   - {fileID: 8300000, guid: 70c066be434c949e6957fab5a4b207dd, type: 3}
   - {fileID: 8300000, guid: c547119b2994646ee83b3a0db104fe36, type: 3}
   - {fileID: 8300000, guid: a418e30da5f494d129c3f1d36847b9ec, type: 3}
   LoopingSFXAssets: []
   OneShotSFXAssets: []
+  MusicAssets:
+  - {fileID: 0}
 --- !u!4 &222629444
 Transform:
   m_ObjectHideFlags: 0
@@ -299,6 +303,18 @@ Transform:
   - {fileID: 607293131}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222629445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222629442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a9e5afc06b4bb409e5bfc44ce85ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &289171982
 GameObject:
   m_ObjectHideFlags: 0

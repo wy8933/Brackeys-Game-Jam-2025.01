@@ -57,14 +57,10 @@ public class SoundManager : MonoBehaviour
             MusicclipDictionary[clip.name] = clip;
         }
 
-        playLoopingSFX("SFX_Clock_Ticking",SFX_Clock);
-        playLoopingSFX("SFX_Ambience_Fireplace",SFX_Fireplace);
-        playLoopingMusic("BGM",BGM);
-        playLoopingMusic("BGM_Intense_Synth",BGM_Intense);
+         
     }
     public void Start()
     {
-        
     }
 
     public void Play_OneShot(string clipName, Dictionary<string,AudioClip> clipDictionary, AudioSource audioSource)
@@ -118,6 +114,6 @@ public class SoundManager : MonoBehaviour
 
     }
 
-
+   
 
 }
