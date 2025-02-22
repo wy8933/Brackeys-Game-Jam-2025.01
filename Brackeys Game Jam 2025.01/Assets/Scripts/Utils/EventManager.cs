@@ -62,9 +62,44 @@ public class EventManager : MonoBehaviour
     public static EventManager Instance;
     private Dictionary<string, bool> ghostSeriesTriggered = new Dictionary<string, bool>();
 
-    public static float autoProgressMultiplier = 1;
+    public float autoProgressMultiplier = 1;
 
-    private Dictionary<GameEvent, GameEventData> ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
+    private Dictionary<GameEvent, GameEventData> ghostProgressionMapping;
+
+    [Header("Items")]
+    public Rug rug;
+
+    [Header("Reference")]
+    public Animator uninvitedAnimator;
+    public GameObject door;
+
+    public Animator darknessAnimator;
+
+    public Animator rugAnimator;
+
+    public Animator portraitAnimator;
+
+    public void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+            string[] series = { "WindowGhost", "TVGhost", "RuleGhost", "Uninvited", "HungryGhost", "Darkness", "Fireplace", "RugMoster" };
+            foreach (string s in series)
+            {
+                ghostSeriesTriggered[s] = false;
+            }
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+
+
+        ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
     {
         // WindowGhost progression
         { GameEvent.WindowGhostStage1, new GameEventData  { eventName = GameEvent.WindowGhostStage2, nextStageTime = 60f * autoProgressMultiplier } },
@@ -97,37 +132,6 @@ public class EventManager : MonoBehaviour
         { GameEvent.RugMonsterStage1, new GameEventData{ eventName = GameEvent.RugMonsterStage2, nextStageTime = 30f * autoProgressMultiplier } },
         { GameEvent.RugMonsterStage2, new GameEventData{ eventName = GameEvent.RugMonsterStage3, nextStageTime = 30f * autoProgressMultiplier } },
     };
-
-    [Header("Items")]
-    public Rug rug;
-
-    [Header("Reference")]
-    public Animator uninvitedAnimator;
-    public GameObject door;
-
-    public Animator darknessAnimator;
-
-    public Animator rugAnimator;
-
-    public Animator portraitAnimator;
-
-    public void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-
-            string[] series = { "WindowGhost", "TVGhost", "RuleGhost", "Uninvited", "HungryGhost", "Darkness", "Fireplace", "RugMoster" };
-            foreach (string s in series)
-            {
-                ghostSeriesTriggered[s] = false;
-            }
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
     }
 
 
