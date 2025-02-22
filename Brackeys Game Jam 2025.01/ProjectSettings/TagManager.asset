@@ -6,9 +6,7 @@ TagManager:
   tags:
   - Coverable
   - Log
-  - Food
-  - Curtain
-  - TVAntenna
+  - UnMoveable
   layers:
   - Default
   - TransparentFX

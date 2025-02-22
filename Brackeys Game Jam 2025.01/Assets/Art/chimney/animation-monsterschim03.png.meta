@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 9e868e972ec02504bb5415b58befc5db
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2862240464387734591
+    second: animation-monsterschim03_0
+  - first:
+      213: -1520934129367426844
+    second: animation-monsterschim03_1
+  - first:
+      213: 6185134545902809609
+    second: animation-monsterschim03_2
+  - first:
+      213: 3008432153391406663
+    second: animation-monsterschim03_3
+  - first:
+      213: 418041533784898719
+    second: animation-monsterschim03_4
+  - first:
+      213: 8592877923686681461
+    second: animation-monsterschim03_5
+  - first:
+      213: -3863317326960724815
+    second: animation-monsterschim03_6
+  - first:
+      213: -7599585130699445023
+    second: animation-monsterschim03_7
+  - first:
+      213: 4554761115564353347
+    second: animation-monsterschim03_8
+  - first:
+      213: 1225921892837613198
+    second: animation-monsterschim03_9
+  - first:
+      213: -6995550384114524215
+    second: animation-monsterschim03_10
+  - first:
+      213: -7008252704739742825
+    second: animation-monsterschim03_11
+  - first:
+      213: -7941545464449940438
+    second: animation-monsterschim03_12
+  - first:
+      213: 805671441111855283
+    second: animation-monsterschim03_13
+  - first:
+      213: 8043086395148323991
+    second: animation-monsterschim03_14
+  - first:
+      213: -6182511703962293347
+    second: animation-monsterschim03_15
+  - first:
+      213: 3186790783582445573
+    second: animation-monsterschim03_16
+  - first:
+      213: -7326814579742039226
+    second: animation-monsterschim03_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: animation-monsterschim03_0
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 830
+        width: 126
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c38b6266774748d0800000000000000
+      internalID: -2862240464387734591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_1
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 833
+        width: 239
+        height: 590
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e85944b77e84eae0800000000000000
+      internalID: -1520934129367426844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_2
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 1257
+        width: 33
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902b888691306d550800000000000000
+      internalID: 6185134545902809609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_3
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 887
+        width: 485
+        height: 794
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e12c9aa1910c920800000000000000
+      internalID: 3008432153391406663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_4
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 732
+        width: 14
+        height: 422
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9cbb926f8e2dc500800000000000000
+      internalID: 418041533784898719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_5
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 1147
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b04afc1f8004770800000000000000
+      internalID: 8592877923686681461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_6
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 1137
+        width: 682
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4f4ef1c5db26ac0800000000000000
+      internalID: -3863317326960724815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_7
+      rect:
+        serializedVersion: 2
+        x: 1501
+        y: 788
+        width: 15
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1eca1548699d88690800000000000000
+      internalID: -7599585130699445023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_8
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 814
+        width: 58
+        height: 287
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 347a9f93a13c53f30800000000000000
+      internalID: 4554761115564353347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_9
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 824
+        width: 572
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8ed5f06779530110800000000000000
+      internalID: 1225921892837613198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_10
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 1095
+        width: 110
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf918a5dffcaee90800000000000000
+      internalID: -6995550384114524215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 752
+        width: 658
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b21dddb4fadbe90800000000000000
+      internalID: -7008252704739742825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_12
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 356
+        width: 1303
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a24c8d7e976f9c190800000000000000
+      internalID: -7941545464449940438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_13
+      rect:
+        serializedVersion: 2
+        x: 1040
+        y: 752
+        width: 307
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b0362538e15e2b00800000000000000
+      internalID: 805671441111855283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_14
+      rect:
+        serializedVersion: 2
+        x: 2696
+        y: 551
+        width: 128
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79cc7985678ce9f60800000000000000
+      internalID: 8043086395148323991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_15
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 0
+        width: 1392
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9be1a19c5e433aa0800000000000000
+      internalID: -6182511703962293347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_16
+      rect:
+        serializedVersion: 2
+        x: 1337
+        y: 219
+        width: 664
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500abe45551c93c20800000000000000
+      internalID: 3186790783582445573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: animation-monsterschim03_17
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 359
+        width: 305
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 643a25775fce15a90800000000000000
+      internalID: -7326814579742039226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      animation-monsterschim03_0: -2862240464387734591
+      animation-monsterschim03_1: -1520934129367426844
+      animation-monsterschim03_10: -6995550384114524215
+      animation-monsterschim03_11: -7008252704739742825
+      animation-monsterschim03_12: -7941545464449940438
+      animation-monsterschim03_13: 805671441111855283
+      animation-monsterschim03_14: 8043086395148323991
+      animation-monsterschim03_15: -6182511703962293347
+      animation-monsterschim03_16: 3186790783582445573
+      animation-monsterschim03_17: -7326814579742039226
+      animation-monsterschim03_2: 6185134545902809609
+      animation-monsterschim03_3: 3008432153391406663
+      animation-monsterschim03_4: 418041533784898719
+      animation-monsterschim03_5: 8592877923686681461
+      animation-monsterschim03_6: -3863317326960724815
+      animation-monsterschim03_7: -7599585130699445023
+      animation-monsterschim03_8: 4554761115564353347
+      animation-monsterschim03_9: 1225921892837613198
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

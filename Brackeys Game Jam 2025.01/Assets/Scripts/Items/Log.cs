@@ -12,10 +12,6 @@ public class Log : MonoBehaviour
 
     void Start()
     {
-        if (GameTimer.Instance != null)
-        {
-            startTime = GameTimer.Instance.GetTimeElapsed();
-        }
         // Automatically find the FireplaceController in the scene
         fireplaceController = FindObjectOfType<FireplaceController>();
     }
@@ -34,7 +30,33 @@ public class Log : MonoBehaviour
                 fireplaceController.OnLogBurn();
             }
 
+            SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume - 0.15f;
             Destroy(gameObject);
         }
+    }
+
+    public void StartBurn()
+    {
+        if (SoundManager.Instance.SFX_Fireplace != null)
+        {
+            SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume + 0.15f;
+        }
+        startBurn = true;
+        if (GameTimer.Instance != null)
+        {
+            startTime = GameTimer.Instance.GetTimeElapsed();
+        }
+    }
+
+    public void StopBurn() 
+    {
+        if (SoundManager.Instance.SFX_Fireplace != null)
+        {
+            SoundManager.Instance.SFX_Fireplace.volume = SoundManager.Instance.SFX_Fireplace.volume - 0.15f;
+        }
+        startBurn = false;
+
+        float currentGameTime = GameTimer.Instance.GetTimeElapsed();
+        burnDuration -= currentGameTime - startTime;
     }
 }
