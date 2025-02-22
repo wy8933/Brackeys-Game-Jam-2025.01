@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 8893246bcef5dfd459085409a77cc2a0
   - enabled: 1
+    path: Assets/Scenes/WeijieTestScene.unity
+    guid: 3ee83e5367493b049ab32d80af989ba9
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects:

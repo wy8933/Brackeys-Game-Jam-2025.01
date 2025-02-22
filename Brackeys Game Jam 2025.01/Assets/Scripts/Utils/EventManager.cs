@@ -298,7 +298,7 @@ public class EventManager : MonoBehaviour
     /// </summary>
     private IEnumerator AutoProgressGhost(GameEventData nextTimedEvent)
     {
-        yield return new WaitForSeconds(nextTimedEvent.nextStageTime/10); // Divide the time by 10 for testing purpose, make sure to remove it
+        yield return new WaitForSeconds(nextTimedEvent.nextStageTime);
         Debug.Log("Auto-progressing to next ghost stage: " + nextTimedEvent.eventName);
         TriggerGhostEventExternally(nextTimedEvent.eventName);
     }

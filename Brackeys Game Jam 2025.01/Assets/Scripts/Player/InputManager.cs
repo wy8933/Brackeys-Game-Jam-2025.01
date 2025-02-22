@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class InputManager : MonoBehaviour
 {
+    public static InputManager Instance;
+
     public InputActionReference PrimaryAction;
     public InputActionReference MousePositionAction;
     public InputActionReference PauseAction;
@@ -14,6 +16,14 @@ public class InputManager : MonoBehaviour
     public Camera camera;
     
     private GameObject selectedObject;
+
+    public void Awake()
+    {
+        if(Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     public GameObject GetClickedObject() {
 
