@@ -17,6 +17,12 @@ public class InputManager : MonoBehaviour
     
     public GameObject selectedObject;
 
+    public Texture2D idleCursorTexture;
+    public Texture2D holdCursorTexture;
+
+    public CursorMode cursorMode = CursorMode.Auto;
+    public Vector2 hotSpot = new Vector2(-1,0);
+
     public void Awake()
     {
         if(Instance == null)
@@ -64,7 +70,8 @@ public class InputManager : MonoBehaviour
     private void OnPrimaryAction(InputAction.CallbackContext context)
     {
         selectedObject = GetClickedObject();
-        
+        Cursor.SetCursor(holdCursorTexture, hotSpot, cursorMode);
+
         if (selectedObject)
         {
             if (selectedObject.CompareTag("Curtain"))
@@ -93,6 +100,7 @@ public class InputManager : MonoBehaviour
     {
         isDragging = false;
         selectedObject = null;
+        Cursor.SetCursor(idleCursorTexture, hotSpot, cursorMode);
     }
     private void OnPauseAction(InputAction.CallbackContext context)
     {

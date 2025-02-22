@@ -5081,6 +5081,10 @@ MonoBehaviour:
   mousePosition: {x: 0, y: 0, z: 0}
   camera: {fileID: 328820727}
   selectedObject: {fileID: 0}
+  idleCursorTexture: {fileID: 2800000, guid: 89737677fc79188408c6e7ae6019ac88, type: 3}
+  holdCursorTexture: {fileID: 2800000, guid: 7724f709360b8954f95a7288f5542e0f, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 100, y: 100}
 --- !u!4 &1895437104
 Transform:
   m_ObjectHideFlags: 0
