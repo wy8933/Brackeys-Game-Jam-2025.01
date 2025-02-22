@@ -5675,6 +5675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 693e7ae84d6ee62448a2d195e0fe665f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoProgressMultiplier: 1
   rug: {fileID: 1131838397}
   uninvitedAnimator: {fileID: 108336478}
   door: {fileID: 1190736300}

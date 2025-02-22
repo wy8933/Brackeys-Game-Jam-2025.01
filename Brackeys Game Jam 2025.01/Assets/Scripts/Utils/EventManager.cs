@@ -62,39 +62,9 @@ public class EventManager : MonoBehaviour
     public static EventManager Instance;
     private Dictionary<string, bool> ghostSeriesTriggered = new Dictionary<string, bool>();
 
-    private Dictionary<GameEvent, GameEventData> ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
-    {
-        // WindowGhost progression
-        { GameEvent.WindowGhostStage1, new GameEventData  { eventName = GameEvent.WindowGhostStage2, nextStageTime = 60f } },
-        { GameEvent.WindowGhostStage2, new GameEventData  { eventName = GameEvent.WindowGhostStage3, nextStageTime = 60f } },
-        { GameEvent.WindowGhostStage3, new GameEventData  { eventName = GameEvent.WindowGhostStage4, nextStageTime = 60f } },
+    public float autoProgressMultiplier = 1;
 
-        // TVGhost progression
-        { GameEvent.TVGhostStage1, new GameEventData  { eventName = GameEvent.TVGhostStage2, nextStageTime = 45f } },
-        { GameEvent.TVGhostStage2, new GameEventData  { eventName = GameEvent.TVGhostStage3, nextStageTime = 45f } },
-
-        // RuleGhost progression
-        { GameEvent.RuleGhostStage1, new GameEventData  { eventName = GameEvent.RuleGhostStage2, nextStageTime = 50f } },
-
-        // Uninvited progression
-        { GameEvent.UninvitedStage1, new GameEventData  { eventName = GameEvent.UninvitedStage2, nextStageTime = 55f } },
-        { GameEvent.UninvitedStage2, new GameEventData  { eventName = GameEvent.UninvitedStage3, nextStageTime = 55f } },
-
-        // HungryGhost progression
-        { GameEvent.HungryGhostStage1, new GameEventData  { eventName = GameEvent.HungryGhostStage2, nextStageTime = 50f } },
-        { GameEvent.HungryGhostStage2, new GameEventData  { eventName = GameEvent.HungryGhostStage3, nextStageTime = 50f } },
-
-        // Darkness progression
-        { GameEvent.DarknessStage1, new GameEventData  { eventName = GameEvent.DarknessStage2, nextStageTime = 40f } },
-
-        // Fireplace progression
-        { GameEvent.FireplaceStage1, new GameEventData  { eventName = GameEvent.FireplaceStage2, nextStageTime = 60f } },
-        { GameEvent.FireplaceStage2, new GameEventData  { eventName = GameEvent.FireplaceStage3, nextStageTime = 60f } },
-
-        // RugMonster progression
-        { GameEvent.RugMonsterStage1, new GameEventData{ eventName = GameEvent.RugMonsterStage2, nextStageTime = 30f } },
-        { GameEvent.RugMonsterStage2, new GameEventData{ eventName = GameEvent.RugMonsterStage3, nextStageTime = 30f } },
-    };
+    private Dictionary<GameEvent, GameEventData> ghostProgressionMapping;
 
     [Header("Items")]
     public Rug rug;
@@ -126,6 +96,42 @@ public class EventManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+
+
+        ghostProgressionMapping = new Dictionary<GameEvent, GameEventData>()
+    {
+        // WindowGhost progression
+        { GameEvent.WindowGhostStage1, new GameEventData  { eventName = GameEvent.WindowGhostStage2, nextStageTime = 60f * autoProgressMultiplier } },
+        { GameEvent.WindowGhostStage2, new GameEventData  { eventName = GameEvent.WindowGhostStage3, nextStageTime = 60f * autoProgressMultiplier } },
+        { GameEvent.WindowGhostStage3, new GameEventData  { eventName = GameEvent.WindowGhostStage4, nextStageTime = 60f * autoProgressMultiplier } },
+
+        // TVGhost progression
+        { GameEvent.TVGhostStage1, new GameEventData  { eventName = GameEvent.TVGhostStage2, nextStageTime = 45f * autoProgressMultiplier } },
+        { GameEvent.TVGhostStage2, new GameEventData  { eventName = GameEvent.TVGhostStage3, nextStageTime = 45f * autoProgressMultiplier } },
+
+        // RuleGhost progression
+        { GameEvent.RuleGhostStage1, new GameEventData  { eventName = GameEvent.RuleGhostStage2, nextStageTime = 50f * autoProgressMultiplier } },
+
+        // Uninvited progression
+        { GameEvent.UninvitedStage1, new GameEventData  { eventName = GameEvent.UninvitedStage2, nextStageTime = 55f * autoProgressMultiplier } },
+        { GameEvent.UninvitedStage2, new GameEventData  { eventName = GameEvent.UninvitedStage3, nextStageTime = 55f * autoProgressMultiplier } },
+
+        // HungryGhost progression
+        { GameEvent.HungryGhostStage1, new GameEventData  { eventName = GameEvent.HungryGhostStage2, nextStageTime = 50f * autoProgressMultiplier } },
+        { GameEvent.HungryGhostStage2, new GameEventData  { eventName = GameEvent.HungryGhostStage3, nextStageTime = 50f * autoProgressMultiplier } },
+
+        // Darkness progression
+        { GameEvent.DarknessStage1, new GameEventData  { eventName = GameEvent.DarknessStage2, nextStageTime = 40f * autoProgressMultiplier } },
+
+        // Fireplace progression
+        { GameEvent.FireplaceStage1, new GameEventData  { eventName = GameEvent.FireplaceStage2, nextStageTime = 60f * autoProgressMultiplier } },
+        { GameEvent.FireplaceStage2, new GameEventData  { eventName = GameEvent.FireplaceStage3, nextStageTime = 60f * autoProgressMultiplier } },
+
+        // RugMonster progression
+        { GameEvent.RugMonsterStage1, new GameEventData{ eventName = GameEvent.RugMonsterStage2, nextStageTime = 30f * autoProgressMultiplier } },
+        { GameEvent.RugMonsterStage2, new GameEventData{ eventName = GameEvent.RugMonsterStage3, nextStageTime = 30f * autoProgressMultiplier } },
+    };
     }
 
 
