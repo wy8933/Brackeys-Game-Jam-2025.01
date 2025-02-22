@@ -99,6 +99,16 @@ public class EventManager : MonoBehaviour
     [Header("Items")]
     public Rug rug;
 
+    [Header("Reference")]
+    public Animator uninvitedAnimator;
+    public GameObject door;
+
+    public Animator darknessAnimator;
+
+    public Animator rugAnimator;
+
+    public Animator portraitAnimator;
+
     public void Awake()
     {
         if (Instance == null)
@@ -417,23 +427,45 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
-        Debug.Log("Uninvited Stage 1 triggered!"); 
+        Debug.Log("Uninvited Stage 1 triggered!");
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedStage1");
+        }
     }
     private void HandleUninvitedStage2() 
     {
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
-        Debug.Log("Uninvited Stage 2 triggered!"); 
+        Debug.Log("Uninvited Stage 2 triggered!");
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedStage2");
+        }
     }
     private void HandleUninvitedStage3() 
     {
+        door.SetActive(false);
         SoundManager.Instance.BGM_Intense.volume = 1.1f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,8000.0f,2.0f);
-        Debug.Log("Uninvited Stage 3 triggered!"); 
+        Debug.Log("Uninvited Stage 3 triggered!");
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedStage3");
+        }
     }
     private void HandleUninvitedRepel() 
     {
-        Debug.Log("Uninvited Repel triggered!"); 
+        Debug.Log("Uninvited Repel triggered!");
+        door.SetActive(true);
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedRepel");
+        }
     }
     #endregion
 
@@ -446,24 +478,44 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
-        Debug.Log("HungryGhost Stage 1 triggered!"); 
+        Debug.Log("HungryGhost Stage 1 triggered!");
+
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.SetTrigger("Stage1");
+        }
     }
     private void HandleHungryGhostStage2() 
     {
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("HungryGhost Stage 2 triggered!");
+
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.SetTrigger("Stage2");
+        }
     }
     private void HandleHungryGhostStage3() 
     {
         SoundManager.Instance.BGM_Intense.volume = 1.1f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,8000.0f,2.0f);
-        Debug.Log("HungryGhost Stage 3 triggered!"); 
+        Debug.Log("HungryGhost Stage 3 triggered!");
+
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.SetTrigger("Stage3");
+        }
     }
     private void HandleHungryGhostRepel() 
     {
         SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
-        Debug.Log("HungryGhost Repel triggered!"); 
+        Debug.Log("HungryGhost Repel triggered!");
+
+        if (portraitAnimator != null)
+        {
+            portraitAnimator.SetTrigger("Repel");
+        }
     }
     #endregion
 
@@ -477,17 +529,33 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
         Debug.Log("Darkness Stage 1 triggered!");
+
+        if (darknessAnimator != null)
+        {
+            darknessAnimator.SetTrigger("Stage1");
+        }
     }
     private void HandleDarknessStage2() 
     {
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
-        Debug.Log("Darkness Stage 2 triggered!"); 
+        Debug.Log("Darkness Stage 2 triggered!");
+
+        if (darknessAnimator != null)
+        {
+            darknessAnimator.SetTrigger("Stage2");
+        }
     }
+
     private void HandleDarknessRepel() 
     {
         SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
-        Debug.Log("Darkness Repel triggered!"); 
+        Debug.Log("Darkness Repel triggered!");
+
+        if (darknessAnimator != null)
+        {
+            darknessAnimator.SetTrigger("Repel");
+        }
     }
     #endregion
 
@@ -531,6 +599,11 @@ public class EventManager : MonoBehaviour
         }
         Debug.Log("Rug Monster Stage 1 triggered");
         rug.StartRugMonster();
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Stage1");
+        }
     }
 
     private void HandleRugMonsterStage2()
@@ -538,6 +611,11 @@ public class EventManager : MonoBehaviour
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
         Debug.Log("Rug Monster Stage 2 triggered");
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Stage2");
+        }
     }
 
     private void HandleRugMonsterStage3()
@@ -545,12 +623,22 @@ public class EventManager : MonoBehaviour
         SoundManager.Instance.BGM_Intense.volume = 1.1f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,6000.0f,2.0f);
         Debug.Log("Rug Monster Stage 3 triggered");
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Stage3");
+        }
     }
 
     private void HandleRugMonsterRepel() 
     {
         SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,2.0f);
         Debug.Log("RugMonster Repel triggered!");
+
+        if (rugAnimator != null)
+        {
+            rugAnimator.SetTrigger("Repel");
+        }
     }
     #endregion
 

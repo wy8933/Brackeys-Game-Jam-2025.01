@@ -47,7 +47,7 @@ public class InputManager : MonoBehaviour
     {
         isDragging = true;
         GameObject clickedObject = GetClickedObject();
-        while (clickedObject != null && !clickedObject.CompareTag("UnMoveable"))
+        while (isDragging&&clickedObject != null && !clickedObject.CompareTag("UnMoveable"))
         {
             clickedObject.transform.position = camera.ScreenToWorldPoint(mousePosition) + new Vector3(0,0,10);
             yield return null;
