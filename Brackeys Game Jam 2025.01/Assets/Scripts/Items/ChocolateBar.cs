@@ -14,7 +14,7 @@ public class ChocolateBar : MonoBehaviour
     // Tracks the current state
     private int currentPieceIndex = 0;
 
-    [Tooltip("Time interval between triggering the Rug Monster when the bar is open.")]
+    [Tooltip("Time interval between triggering the Rug Monster when the bar is open")]
     public float rugMonsterTriggerInterval = 30f;
     private float lastRugMonsterTriggerTime = 0f;
 
@@ -50,7 +50,7 @@ public class ChocolateBar : MonoBehaviour
     public void OpenBar()
     {
         isOpen = true;
-        Debug.Log("Chocolate bar is now open!");
+        Debug.Log("Chocolate bar is now open");
     }
 
     /// <summary>
@@ -60,7 +60,7 @@ public class ChocolateBar : MonoBehaviour
     {
         if (!isOpen)
         {
-            Debug.LogWarning("Cannot eat! The chocolate bar is closed. Open it first.");
+            Debug.LogWarning("Cannot eat! The chocolate bar is closed. Open it first");
             return;
         }
 
@@ -73,7 +73,7 @@ public class ChocolateBar : MonoBehaviour
         }
         else
         {
-            Debug.Log("The chocolate bar is fully eaten!");
+            Debug.Log("The chocolate bar is fully eaten");
         }
     }
 }
