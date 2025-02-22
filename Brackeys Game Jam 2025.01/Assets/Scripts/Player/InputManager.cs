@@ -66,7 +66,16 @@ public class InputManager : MonoBehaviour
                     return;
                 }
             }
-            
+
+            if (selectedObject.CompareTag("TVAntenna"))
+            {
+                TVAntenna antenna = selectedObject.GetComponent<TVAntenna>();
+                if (antenna)
+                {
+                    antenna.ChangeAntennaPosition();
+                    return;
+                }
+            }
             isDragging = true;
         }
     }
