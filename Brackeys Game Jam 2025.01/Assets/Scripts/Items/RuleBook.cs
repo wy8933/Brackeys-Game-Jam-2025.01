@@ -41,6 +41,7 @@ public class RuleBook : MonoBehaviour
     {
         if (rulebookDisplay != null)
         {
+            SoundManager.Instance.Play_OneShot("SFX_Rulebook_Open", SoundManager.Instance.SFXOneShotsclipDictionary,SoundManager.Instance.SFX_OneShots);
             rulebookDisplay.SetActive(true);
             isOpen = true;
         }

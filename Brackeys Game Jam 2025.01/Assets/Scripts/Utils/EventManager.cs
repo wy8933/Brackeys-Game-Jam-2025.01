@@ -359,6 +359,7 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
         Debug.Log("WindowGhost Stage 1 triggered!");
+        SoundManager.Instance.Play_OneShot("SFX_Window_Knock", SoundManager.Instance.SFXOneShotsclipDictionary,SoundManager.Instance.SFX_OneShots);
 
         if (windowAnimator != null)
         {
@@ -493,6 +494,7 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
+        SoundManager.Instance.Play_OneShot("SFX_Door_Knock", SoundManager.Instance.SFXOneShotsclipDictionary,SoundManager.Instance.SFX_OneShots);
         Debug.Log("Uninvited Stage 1 triggered!");
 
         if (uninvitedAnimator != null)
