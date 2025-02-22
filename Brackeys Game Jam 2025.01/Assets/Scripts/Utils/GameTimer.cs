@@ -27,7 +27,7 @@ public class GameTimer : MonoBehaviour
     {
         _elapsedTime += Time.deltaTime;
 
-        if (clockText && _elapsedTime > GAME_DURATION)
+        if (clockText)
         {
             float progress = _elapsedTime / GAME_DURATION;
             float hours = progress * 6f; 
