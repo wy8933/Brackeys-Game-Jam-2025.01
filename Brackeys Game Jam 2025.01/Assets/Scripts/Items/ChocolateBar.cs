@@ -49,6 +49,7 @@ public class ChocolateBar : MonoBehaviour
     /// </summary>
     public void OpenBar()
     {
+        SoundManager.Instance.Play_OneShot("SFX_Candy_Wrapper_01", SoundManager.Instance.SFXOneShotsclipDictionary,SoundManager.Instance.SFX_OneShots);
         isOpen = true;
         Debug.Log("Chocolate bar is now open");
     }
