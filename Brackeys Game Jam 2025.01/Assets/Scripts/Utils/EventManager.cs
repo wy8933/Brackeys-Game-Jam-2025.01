@@ -99,6 +99,10 @@ public class EventManager : MonoBehaviour
     [Header("Items")]
     public Rug rug;
 
+    [Header("Reference")]
+    public Animator uninvitedAnimator;
+    public GameObject door;
+
     public void Awake()
     {
         if (Instance == null)
@@ -417,23 +421,45 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
-        Debug.Log("Uninvited Stage 1 triggered!"); 
+        Debug.Log("Uninvited Stage 1 triggered!");
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedStage1");
+        }
     }
     private void HandleUninvitedStage2() 
     {
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
-        Debug.Log("Uninvited Stage 2 triggered!"); 
+        Debug.Log("Uninvited Stage 2 triggered!");
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedStage2");
+        }
     }
     private void HandleUninvitedStage3() 
     {
+        door.SetActive(false);
         SoundManager.Instance.BGM_Intense.volume = 1.1f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,8000.0f,2.0f);
-        Debug.Log("Uninvited Stage 3 triggered!"); 
+        Debug.Log("Uninvited Stage 3 triggered!");
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedStage3");
+        }
     }
     private void HandleUninvitedRepel() 
     {
-        Debug.Log("Uninvited Repel triggered!"); 
+        Debug.Log("Uninvited Repel triggered!");
+        door.SetActive(true);
+
+        if (uninvitedAnimator != null)
+        {
+            uninvitedAnimator.SetTrigger("UninvitedRepel");
+        }
     }
     #endregion
 
