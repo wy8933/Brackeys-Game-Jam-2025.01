@@ -79,6 +79,12 @@ public class EventManager : MonoBehaviour
 
     public Animator portraitAnimator;
 
+    public Animator windowAnimator;
+
+    public Animator fireAnimator;
+
+    public Animator TVAnimator;
+
     public void Awake()
     {
         if (Instance == null)
@@ -345,30 +351,55 @@ public class EventManager : MonoBehaviour
             SoundManager.Instance.BGM_Intense_LPF.cutoffFrequency = 1200.0f;
             SoundManager.Instance.playLoopingMusic("BGM_Intense_Synth",SoundManager.Instance.BGM_Intense, 0.9f);
         }
-        Debug.Log("WindowGhost Stage 1 triggered!"); 
+        Debug.Log("WindowGhost Stage 1 triggered!");
+
+        if (windowAnimator != null)
+        {
+            windowAnimator.SetTrigger("Stage1");
+        }
     }
     private void HandleWindowGhostStage2() 
     {
         SoundManager.Instance.BGM_Intense.volume = 0.95f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,4800.0f,2.0f);
-        Debug.Log("WindowGhost Stage 2 triggered!"); 
+        Debug.Log("WindowGhost Stage 2 triggered!");
+
+        if (windowAnimator != null)
+        {
+            windowAnimator.SetTrigger("Stage2");
+        }
     }
     private void HandleWindowGhostStage3() 
     {
         SoundManager.Instance.BGM_Intense.volume = 1.0f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,7800.0f,2.0f);
-        Debug.Log("WindowGhost Stage 3 triggered!"); 
+        Debug.Log("WindowGhost Stage 3 triggered!");
+
+        if (windowAnimator != null)
+        {
+            windowAnimator.SetTrigger("Stage3");
+        }
     }
     private void HandleWindowGhostStage4() 
     {
         SoundManager.Instance.BGM_Intense.volume = 1.1f;
         SoundManager.Instance.LerpLPFCutoff(SoundManager.Instance.BGM_Intense_LPF,9000.0f,2.0f);
-        Debug.Log("WindowGhost Stage 4 triggered!"); 
+        Debug.Log("WindowGhost Stage 4 triggered!");
+
+        if (windowAnimator != null)
+        {
+            windowAnimator.SetTrigger("Stage4");
+        }
     }
     private void HandleWindowGhostRepel() 
     {
         SoundManager.Instance.FadeAudio(SoundManager.Instance.BGM_Intense,3.0f);
-        Debug.Log("WindowGhost Repel triggered!"); 
+        Debug.Log("WindowGhost Repel triggered!");
+
+        if (windowAnimator != null)
+        {
+            windowAnimator.SetTrigger("Repel");
+        }
     }
     #endregion
 
