@@ -76,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -401,7 +401,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -410,7 +410,18 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation-monsterschim04_0: 1408754331807261131
+      animation-monsterschim04_1: 878470649439159864
+      animation-monsterschim04_10: -3967384419428150696
+      animation-monsterschim04_2: 3665265326909624139
+      animation-monsterschim04_3: 1635610241799441586
+      animation-monsterschim04_4: 2125827218200394707
+      animation-monsterschim04_5: 8956537686813207435
+      animation-monsterschim04_6: -5639213840729914037
+      animation-monsterschim04_7: -3096363534830579245
+      animation-monsterschim04_8: 6748968953277815401
+      animation-monsterschim04_9: 6344414722395751106
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

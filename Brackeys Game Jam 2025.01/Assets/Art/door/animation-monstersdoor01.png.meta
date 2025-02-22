@@ -61,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -276,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -285,7 +285,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      animation-monstersdoor01_0: 6520476192250328890
+      animation-monstersdoor01_1: -4212895829898348848
+      animation-monstersdoor01_2: -1961104267372600971
+      animation-monstersdoor01_3: -1455757478899595312
+      animation-monstersdoor01_4: -3029640136672238740
+      animation-monstersdoor01_5: -9029780657382081090
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
