@@ -26,10 +26,14 @@ public class GameTimer : MonoBehaviour
     void Update()
     {
         _elapsedTime += Time.deltaTime;
-
         if (clockText)
         {
             float progress = _elapsedTime / GAME_DURATION;
+
+            if (progress >= 1) {
+                EventManager.Instance.TriggerGhostEventExternally(GameEvent.EndNight);
+            }
+
             float hours = progress * 6f; 
             int minutes = Mathf.FloorToInt((hours - Mathf.Floor(hours)) * 60);
             clockText.SetText($"{Mathf.Floor(hours)}:{minutes:00} AM");

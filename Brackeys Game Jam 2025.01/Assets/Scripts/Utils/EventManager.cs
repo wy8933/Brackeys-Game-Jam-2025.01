@@ -86,6 +86,11 @@ public class EventManager : MonoBehaviour
     public Animator TVAnimator;
     public GameObject TVLight;
 
+    public Animator ruleAnimator;
+
+    public GameObject WinScreen;
+    public GameObject DeathScreen;
+
     public void Awake()
     {
         if (Instance == null)
@@ -176,6 +181,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.WindowGhostStage4:
                 HandleWindowGhostStage4();
+                DeathScreen.SetActive(true);
                 break;
             case GameEvent.WindowGhostRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.WindowGhostRepel));
@@ -192,6 +198,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.TVGhostStage3:
                 HandleTVGhostStage3();
+                DeathScreen.SetActive(true);
                 break;
             case GameEvent.TVGhostRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.TVGhostRepel));
@@ -221,6 +228,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.UninvitedStage3:
                 HandleUninvitedStage3();
+                DeathScreen.SetActive(true);
                 break;
             case GameEvent.UninvitedRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.UninvitedRepel));
@@ -237,6 +245,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.HungryGhostStage3:
                 HandleHungryGhostStage3();
+                DeathScreen.SetActive(true);
                 break;
             case GameEvent.HungryGhostRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.HungryGhostRepel));
@@ -250,6 +259,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.DarknessStage2:
                 HandleDarknessStage2();
+                DeathScreen.SetActive(true);
                 break;
             case GameEvent.DarknessRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.DarknessRepel));
@@ -266,6 +276,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.FireplaceStage3:
                 HandleFireplaceStage3();
+                //DeathScreen.SetActive(true);
                 break;
             case GameEvent.FireplaceRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.FireplaceRepel));
@@ -282,6 +293,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.RugMonsterStage3:
                 HandleRugMonsterStage3();
+                DeathScreen.SetActive(true);
                 break;
             case GameEvent.RugMonsterRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.RugMonsterRepel));
@@ -344,6 +356,7 @@ public class EventManager : MonoBehaviour
     private void EndNight()
     {
         Debug.Log("Night has ended!");
+        WinScreen.SetActive(true);
     }
 
 
