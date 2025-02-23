@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class ChocolateBar : MonoBehaviour
 {
     [Tooltip("Indicates whether the chocolate bar is open for eating")]
     public bool isOpen = false;
+    public bool isGone = false;
 
     [Tooltip("Sprites representing the chocolate bar states")]
     public Sprite[] chocolateStates;
@@ -71,13 +73,14 @@ public class ChocolateBar : MonoBehaviour
         }
         else
         {
+            isGone = true;
             Debug.Log("The chocolate bar is fully eaten");
         }
     }
 
     private void OnMouseDown()
     {
-        if (currentPieceIndex < chocolateStates.Length - 1) 
+        if (currentPieceIndex < chocolateStates.Length - 1 &&!isGone) 
         {
             EatPiece();
             if (chocolate != null && isOpen)
@@ -88,5 +91,18 @@ public class ChocolateBar : MonoBehaviour
             }
             OpenBar();
         }
+    }
+
+    public void ChocolateTaken() {
+        currentPieceIndex = chocolateStates.Length - 1;
+        spriteRenderer.sprite = chocolateStates[currentPieceIndex];
+        isGone = true;
+        isOpen = false;
+        StartCoroutine(ResetRug());
+    }
+
+    public IEnumerator ResetRug() {
+        yield return new WaitForSeconds(1f);
+        EventManager.Instance.TriggerGhostEventExternally(GameEvent.RugMonsterRepel);
     }
 }

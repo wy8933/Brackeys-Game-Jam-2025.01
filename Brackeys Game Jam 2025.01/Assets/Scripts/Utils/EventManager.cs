@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public enum GameEvent
@@ -76,6 +77,7 @@ public class EventManager : MonoBehaviour
     public Animator darknessAnimator;
 
     public Animator rugAnimator;
+    public ChocolateBar chocolateBar;
 
     public Animator portraitAnimator;
 
@@ -182,6 +184,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.WindowGhostStage4:
                 HandleWindowGhostStage4();
                 DeathScreen.SetActive(true);
+                StartCoroutine(GameOver());
                 break;
             case GameEvent.WindowGhostRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.WindowGhostRepel));
@@ -199,6 +202,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.TVGhostStage3:
                 HandleTVGhostStage3();
                 DeathScreen.SetActive(true);
+                StartCoroutine(GameOver());
                 break;
             case GameEvent.TVGhostRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.TVGhostRepel));
@@ -229,6 +233,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.UninvitedStage3:
                 HandleUninvitedStage3();
                 DeathScreen.SetActive(true);
+                StartCoroutine(GameOver());
                 break;
             case GameEvent.UninvitedRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.UninvitedRepel));
@@ -246,6 +251,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.HungryGhostStage3:
                 HandleHungryGhostStage3();
                 DeathScreen.SetActive(true);
+                StartCoroutine(GameOver());
                 break;
             case GameEvent.HungryGhostRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.HungryGhostRepel));
@@ -260,6 +266,7 @@ public class EventManager : MonoBehaviour
             case GameEvent.DarknessStage2:
                 HandleDarknessStage2();
                 DeathScreen.SetActive(true);
+                StartCoroutine(GameOver());
                 break;
             case GameEvent.DarknessRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.DarknessRepel));
@@ -293,7 +300,7 @@ public class EventManager : MonoBehaviour
                 break;
             case GameEvent.RugMonsterStage3:
                 HandleRugMonsterStage3();
-                DeathScreen.SetActive(true);
+                chocolateBar.ChocolateTaken();
                 break;
             case GameEvent.RugMonsterRepel:
                 ResetGhostSeries(GetGhostSeries(GameEvent.RugMonsterRepel));
@@ -357,6 +364,7 @@ public class EventManager : MonoBehaviour
     {
         Debug.Log("Night has ended!");
         WinScreen.SetActive(true);
+        StartCoroutine(GameOver());
     }
 
 
@@ -753,5 +761,14 @@ public class EventManager : MonoBehaviour
     public void OnCovered(GameObject coverable)
     {
         Debug.Log($"{coverable.name} is completely covered!");
+    }
+
+    /// <summary>
+    /// Go back to main menu
+    /// </summary>
+    /// <returns></returns>
+    public IEnumerator GameOver() {
+        yield return new WaitForSeconds(10f);
+        SceneManager.LoadScene(0);
     }
 }
