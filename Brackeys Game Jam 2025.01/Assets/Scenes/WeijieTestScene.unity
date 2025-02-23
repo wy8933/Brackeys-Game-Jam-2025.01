@@ -597,6 +597,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOpen: 0
+  isGone: 0
   chocolateStates:
   - {fileID: 21300000, guid: f6e86bd984877054da7d3202f974e765, type: 3}
   - {fileID: 21300000, guid: 65026dc21b6331643875827df7d3f6b9, type: 3}
@@ -3804,6 +3805,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1731517273744500444, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1345793711}
+    - target: {fileID: 1731517273744500444, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnSettingClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 1788107738080676153, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1345793711}
+    - target: {fileID: 1788107738080676153, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnMainMenuClicked
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950223043059834641, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1345793711}
+    - target: {fileID: 2950223043059834641, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnPauseClosed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950223043059834641, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 3583800377859416411, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_Name
       value: Pause
@@ -3892,16 +3921,47 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8363752270452739875, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1345793711}
+    - target: {fileID: 8363752270452739875, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnExitClicked
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3583800377859416411, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1345793711}
   m_SourcePrefab: {fileID: 100100000, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
 --- !u!1 &1345793709 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3583800377859416411, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
   m_PrefabInstance: {fileID: 1345793708}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1345793710 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4183730876403317221, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+  m_PrefabInstance: {fileID: 1345793708}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1345793711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1345793709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2e4c759110542d40ad4e95610c5bf27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SettingsPanel: {fileID: 1345793710}
+  CreditsPanel: {fileID: 0}
+  PausePanel: {fileID: 1345793709}
 --- !u!1 &1372435874
 GameObject:
   m_ObjectHideFlags: 0
@@ -5691,6 +5751,7 @@ MonoBehaviour:
   door: {fileID: 1190736300}
   darknessAnimator: {fileID: 1426906825}
   rugAnimator: {fileID: 1131838401}
+  chocolateBar: {fileID: 113261233}
   portraitAnimator: {fileID: 166501020}
   windowAnimator: {fileID: 1333843255}
   fireAnimator: {fileID: 0}

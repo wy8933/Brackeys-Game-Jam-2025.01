@@ -5,6 +5,7 @@ public class MenuManager : MonoBehaviour
 {
     public GameObject SettingsPanel;
     public GameObject CreditsPanel;
+    public GameObject PausePanel;
 
     /// <summary>
     /// Start the game
@@ -56,8 +57,16 @@ public class MenuManager : MonoBehaviour
     /// <summary>
     /// Go back to main menu
     /// </summary>
-    public void OnMainMenuClicked() {
-        
+    public void OnMainMenuClicked()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+
+    public void OnPauseClosed()
+    {
+        Time.timeScale = 1f;
+        PauseMenu.Instance.Resume();
+        PausePanel.SetActive(false);
     }
 }
