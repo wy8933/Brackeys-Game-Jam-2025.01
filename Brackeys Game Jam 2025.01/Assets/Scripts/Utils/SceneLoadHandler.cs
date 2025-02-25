@@ -28,7 +28,7 @@ public class SceneLoadHandler : MonoBehaviour
         else if (scene.name == "MainMenu") // Play correct sounds if menu is loaded
         {
             // Make this menu music
-            SoundManager.Instance.playLoopingMusic("BGM",SoundManager.Instance.BGM, 1.0f);
+            SoundManager.Instance.playLoopingMusic("Menu_Music",SoundManager.Instance.BGM, 1.0f);
         }
         Debug.Log("New scene loaded: " + scene.name);
 
