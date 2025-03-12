@@ -3805,6 +3805,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1080162288839822106, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
+    - target: {fileID: 1080162288839822106, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1617292232370452510, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -3837,8 +3845,24 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: MenuManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 3218694041333568662, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
+    - target: {fileID: 3218694041333568662, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3477644377696913721, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3502751586673090660, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
+    - target: {fileID: 3502751586673090660, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_hasFontAssetChanged
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3583800377859416411, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
@@ -3852,6 +3876,14 @@ PrefabInstance:
     - target: {fileID: 4183730876403317221, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4502965247966445777, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
+    - target: {fileID: 4502965247966445777, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5559268829604731113, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3880,6 +3912,14 @@ PrefabInstance:
     - target: {fileID: 6471899345661637024, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6914597297316818949, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
+    - target: {fileID: 6914597297316818949, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7110882204086602346, guid: 63ba4f0c670e2f44a9cf0de4763e7efe, type: 3}
       propertyPath: m_Pivot.x
@@ -5443,8 +5483,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Resume
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
+  m_sharedMaterial: {fileID: -2797738613138586873, guid: 8695dcdf24a290441b0587de4a42724f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5468,7 +5508,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 53.7
+  m_fontSize: 48
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
